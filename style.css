@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(to right top, #0e031b, #150828, #1a0c34, #200c41, #290a4e);
+  nav {
+    display: flex;
+    margin: 2rem auto;
+    border: white 1px solid;
+    width: 90%;
+    min-height: 2rem;
+    justify-content: space-between;
+
+    .list-header {
+      display: flex;
+      margin: 0 2rem;
+      list-style: none;
+      gap: 1rem;
+      color: #fff;
+      font-size: 1.5rem;
+      justify-self: center;
+      align-items: center;
+
+      :hover {
+        scale: 1.1;
+        cursor: pointer;
+        border-bottom: #fff 1px solid;
+      }
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      margin: 0 1rem;
+
+      img {
+        filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
+        background-color: transparent;
+        border: none;
+        display: block;
+      }
+
+      :hover {
+        cursor: pointer;
+        scale: 1.1;
+      }
+    }
+  }
+
+  main {
+    display: grid;
+    border: #fff 1px solid;
+    width: 40vw;
+    margin: 2rem auto;
+    min-height: 1rem;
+    grid-template-columns: 5 1fr;
+    grid-template-rows: 5 1fr;
+    gap: 0.1rem;
+    color: #fff;
+    font-size: 1.4rem;
+
+    .row_main_content:nth-child(1) {
+      border: #fff 1px solid;
+      padding: 0.2rem;
+      display: flex;
+
+      span {
+        color: #2cc9ff;
+      }
+    }
+
+    .row_main_content:nth-child(2) {
+      grid-column-start: 1;
+      grid-row-start: 2;
+      border: #fff 1px solid;
+      margin-bottom: 1rem;
+      padding: 0.2rem;
+
+      span {
+        color: #250946;
+      }
+    }
+
+    .row_main_content:nth-child(3) {
+      grid-column-start: 1;
+      grid-row-start: 3;
+      border: #fff 1px solid;
+      padding: 0.2rem;
+
+      p {
+        .yellow {
+          color: #fac710;
+        }
+
+        .blue {
+          color: #12cdd4;
+        }
+      }
+    }
+
+    .row_main_content:nth-child(4) {
+      grid-row: span 3 / span 3;
+      grid-column-start: 2;
+      grid-row-start: 1;
+      border: #fff 1px solid;
+      padding: 0.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      img {
+        border: #fff 1px solid;
+        width: 12.5rem;
+        height: 12.5rem;
+        object-fit: cover;
+        border-radius: 6rem;
+        
+      }
+    }
+  }
+}
