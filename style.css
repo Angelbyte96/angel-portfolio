@@ -27,7 +27,7 @@ body {
       list-style: none;
       gap: 1rem;
       color: #fff;
-      font-size: 1.5rem;
+      font-size: clamp(0.2rem, 3vw, 1rem);
       justify-self: center;
       align-items: center;
 
