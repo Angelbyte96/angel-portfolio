@@ -16,7 +16,7 @@ body {
   nav {
     display: flex;
     margin: 2rem auto;
-    border: white 1px solid;
+    
     width: 90vw;
     min-height: 2rem;
     justify-content: space-between;
@@ -35,6 +35,7 @@ body {
         scale: 1.1;
         cursor: pointer;
         border-bottom: #fff 1px solid;
+        transition: 0.25s ease-in-out;
       }
     }
 
@@ -53,6 +54,7 @@ body {
       :hover {
         cursor: pointer;
         scale: 1.1;
+        transition: 0.25s ease-in-out;
       }
     }
   }
@@ -60,7 +62,7 @@ body {
   main {
     #section-presentation {
       display: grid;
-      border: #fff 1px solid;
+      
       width: 60vw;
       
       margin: 2rem auto;
@@ -71,13 +73,15 @@ body {
 
       .row_main_content {
         display: flex;
-        border: #fff 1px solid;
+        
         gap: 0.1rem;
         
       }
 
       .row_main_content:nth-child(1) {
         grid-area: 1 / 1 / 2 / 2;
+        place-content: left;
+        place-items: end;
         padding: 0.2rem;
         font-size: clamp(0.4rem, calc(1rem + 0.4vw), 2rem);
 
@@ -174,7 +178,7 @@ body {
       width: 60vw;
       margin: 2rem auto;
       color: #fff;
-      border: #fff 1px solid;
+      
     }
   }
 }
