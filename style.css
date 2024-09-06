@@ -13,6 +13,7 @@ body {
 		#200c41,
 		#290a4e
 	);
+	background-attachment: fixed;
 	nav {
 		display: flex;
 		margin: 2rem auto;
