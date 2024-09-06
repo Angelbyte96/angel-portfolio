@@ -1,15 +1,23 @@
 {
-  "name": "portfolio-angel",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite --open",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "oxlint": "^0.9.2",
-    "vite": "5.4.2"
-  }
+	"name": "react-test",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite --open",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"react": "18.3.1",
+		"react-dom": "18.3.1"
+	},
+	"devDependencies": {
+		"@types/react": "18.3.3",
+		"@types/react-dom": "18.3.0",
+		"@vitejs/plugin-react": "4.3.1",
+		"globals": "15.9.0",
+		"oxlint": "0.9.2",
+		"vite": "5.4.1"
+	}
 }

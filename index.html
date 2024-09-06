@@ -5,17 +5,13 @@
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Angel Guzmán | Desarrollador Web</title>
-		<script type="module" src="./src/index.js" defer></script>
+		<script type="module" src="./src/main.jsx" defer></script>
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
 		<nav>
-			<ul class="list-header">
-				<li><a>Proyectos</a></li>
-				<li><a>Sobre Mi</a></li>
-				<li><a>Tecnologías</a></li>
-			</ul>
-			<button><img src="./public/modo-oscuro-sun-24.png" /></button>
+			<ul id="listNav" class="list-header"></ul>
+			<button><img src="./src/assets/modo-oscuro-sun-24.png" /></button>
 		</nav>
 		<main>
 			<section id="section-presentation">
@@ -34,7 +30,7 @@
 					</p>
 				</div>
 				<div class="row_main_content">
-					<img src="./public/Angel-Profile.webp" />
+					<img src="./src/assets/Angel-Profile.webp" />
 				</div>
 				<div id="link-redes" class="row_main_content">
 					<li id="list-redes">
@@ -112,19 +108,8 @@
 					contigo el resultado de mi trabajo. ¡Inspírate y sumérgete en mis proyectos
 					de software!
 				</p>
-				<div id="content-proyects">
-					
-				</div>
+				<div id="content-proyects"></div>
 			</section>
 		</main>
-		<template id="template-card-proyect">
-			<div class="card-proyect">
-				<img src="" alt="" />
-				<div class="info-proyect">
-					<h2></h2>
-					<p></p>
-					<ul class="list-proyect"></ul>
-				</div>
-			</div>
 	</body>
 </html>
