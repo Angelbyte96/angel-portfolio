@@ -17,10 +17,19 @@ body {
 	nav {
 		display: flex;
 		margin: 2rem auto;
-		
-		width: 80vw;
+
+		width: 90vw;
 		min-height: 2rem;
 		justify-content: space-between;
+
+		@media (width <= 550px) {
+			width: 90vw;
+			margin: 0.3rem auto;
+		}
+
+		@media (width >= 768px) {
+			width: 90vw;
+		}
 
 		.list-header {
 			display: flex;
@@ -31,6 +40,10 @@ body {
 			font-size: clamp(0.2rem, 3vw, 1.3rem);
 			justify-self: center;
 			align-items: center;
+			@media (width <= 550px) {
+				justify-content: flex-start;
+				margin: 0;
+			}
 
 			:hover {
 				scale: 1.1;
@@ -51,6 +64,10 @@ body {
 				background-color: transparent;
 				border: none;
 				display: block;
+				@media (width <= 550px) {
+					width: 1.2rem;
+					height: 1.2rem;
+				}
 			}
 
 			:hover {
@@ -62,9 +79,18 @@ body {
 	}
 
 	main {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 0 auto;
+		width: 50vw;
+		@media (width <= 550px) {
+			width: 90vw;
+		}
+
 		#section-presentation {
 			display: grid;
-			
+
 			width: 50vw;
 			margin: 2rem auto;
 			grid-template-columns: repeat(2, 1fr);
@@ -72,9 +98,14 @@ body {
 			gap: 0.1rem;
 			color: #fff;
 
+			@media (width <= 550px) {
+				width: 90vw;
+				margin: 0.5rem auto;
+			}
+
 			.row_main_content {
 				display: flex;
-				
+
 				gap: 0.1rem;
 			}
 
@@ -83,7 +114,7 @@ body {
 				place-content: left;
 				place-items: end;
 				padding: 0.2rem;
-				font-size: clamp(0.2rem, 1.8vw, 2rem);
+				font-size: clamp(1rem, 1.8vw, 2rem);
 
 				span {
 					color: #2cc9ff;
@@ -96,7 +127,9 @@ body {
 				padding: 0.2rem;
 
 				h4 {
-					font-size: clamp(0.2rem, 1.2vw, 1.3rem);
+					font-size: clamp(0.8rem, 1.2vw, 1.3rem);
+					padding: 0;
+					margin:  -0.5rem 0 0 0;
 				}
 			}
 
@@ -106,7 +139,7 @@ body {
 
 				p {
 					text-wrap: wrap;
-					font-size: clamp(0.2rem, 2vw, 1.2rem);
+					font-size: clamp(0.65rem, 2vw, 1.2rem);
 
 					.yellow {
 						color: #fac710;
@@ -144,6 +177,9 @@ body {
 					flex-direction: row;
 					gap: 0.6rem;
 					height: min-content;
+					@media (width <= 550px) {
+						gap: 1.2rem;
+					}
 
 					button {
 						display: flex;
@@ -154,10 +190,14 @@ body {
 						justify-content: center;
 						align-items: center;
 						gap: 0.2rem;
-						font-size: clamp(0.2rem, 1.2vw, 1rem);
+						font-size: clamp(0.5rem, 1.2vw, 1rem);
 
 						svg {
 							fill: #fff;
+							@media (width <= 550px) {
+								width: 0.7rem;
+								height: 0.7rem;
+							}
 						}
 
 						a {
@@ -173,15 +213,22 @@ body {
 			width: 50vw;
 			margin: 2rem auto;
 			color: #fff;
-			
+
+			@media (width <= 550px) {
+				width: 90vw;
+				margin: 0.5rem auto;
+			}
 
 			h1 {
 				margin: 0 0 1rem 0;
-				font-size: clamp(0.2rem, 1.8vw, 2rem);
+				font-size: clamp(1.8rem, 1.2vw, 2rem);
+				@media (width <= 550px) {
+					margin: 0 0 0.5rem 0;
+				}
 			}
 
 			p {
-				font-size: clamp(0.2rem, 2vw, 1.2rem);
+				font-size: clamp(0.9rem, 1.2vw, 1.2rem);
 			}
 
 			#content-proyects {
@@ -191,18 +238,29 @@ body {
 				column-gap: 0.5rem;
 				row-gap: 0px;
 				padding: 1rem;
-				
+				@media (width <= 550px) {
+					grid-template-columns: 1fr;
+					place-items: center;
+					width: 90%;
+					row-gap: 1rem;
+				}
 
 				.card-proyect {
-					
 					height: 25rem;
 					padding: 0.4rem;
 					background-color: #150828;
+					@media (width <= 550px) {
+						width: 90%;
+						height: auto;
+					}
 
 					img {
 						width: 100%;
 						height: 50%;
 						border-radius: 1.5rem;
+						@media (width <= 550px) {
+							height: 15vh;
+						}
 					}
 
 					.info-proyect {
@@ -211,16 +269,25 @@ body {
 						h2 {
 							margin-bottom: 0.5rem;
 							color: #2cc9ff;
+							@media (width <= 550px) {
+								font-size: 1.2rem;
+							}
 						}
 
 						p {
 							margin-bottom: 0.5rem;
+							@media (width <= 550px) {
+								font-size: 0.9rem;
+							}
 						}
 
 						.list-proyect {
 							display: flex;
 							list-style: none;
 							gap: 0.5rem;
+							@media (width <= 550px) {
+								gap: 0.5rem;
+							}
 
 							li {
 								background-color: #005daa;
@@ -230,6 +297,9 @@ body {
 								color: #fff;
 								justify-content: center;
 								align-items: center;
+								@media (width <= 550px) {
+									font-size: 0.8rem;
+								}
 							}
 						}
 					}
