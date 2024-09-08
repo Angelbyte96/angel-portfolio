@@ -1,11 +1,11 @@
 import React from 'react';
 import { proyects } from '../proyects.js';
 
-const CardProyect = () => {
+const CardProyect = React.memo(() => {
 	return proyects.proyectsTotals.map((proyect) => {
 		return (
 			<div className='card-proyect' key={proyect.id}>
-				<img src={proyect.img} alt={proyect.title} />
+				<img src={proyect.img} alt={proyect.title} width="300" height="200"/>
 				<div className='info-proyect'>
 					<h2>{proyect.title}</h2>
 					<p>{proyect.description}</p>
@@ -18,6 +18,6 @@ const CardProyect = () => {
 			</div>
 		);
 	});
-};
+});
 
 export { CardProyect };
