@@ -1,3 +1,5 @@
+import comingSoon from './assets/comingSoon.webp';
+
 const proyects = {
 	proyectsTotals: [
 		{
@@ -5,7 +7,7 @@ const proyects = {
 			title: 'Proyect 1',
 			description:
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.',
-			img: './src/assets/comingSoon.webp',
+			img: `${comingSoon}`,
 			list: ['HTML', 'CSS', 'JavaScript']
 		},
 		{
@@ -13,7 +15,7 @@ const proyects = {
 			title: 'Proyect 2',
 			description:
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.',
-			img: './src/assets/comingSoon.webp',
+			img: `${comingSoon}`,
 			list: ['NodeJs', 'TypeScript']
 		}
 	]
