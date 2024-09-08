@@ -5,7 +5,7 @@ const proyects = {
 			title: 'Proyect 1',
 			description:
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.',
-			img: './src/assets/coming soon.webp',
+			img: './src/assets/comingSoon.webp',
 			list: ['HTML', 'CSS', 'JavaScript']
 		},
 		{
@@ -13,7 +13,7 @@ const proyects = {
 			title: 'Proyect 2',
 			description:
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.',
-			img: './src/assets/coming soon.webp',
+			img: './src/assets/comingSoon.webp',
 			list: ['NodeJs', 'TypeScript']
 		}
 	]
