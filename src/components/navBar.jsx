@@ -1,5 +1,3 @@
-import React from 'react';
-
 // Componente que solo se encarga de renderizar la lista de elementos
 const ListComponent = ({ items }) => {
 	return (

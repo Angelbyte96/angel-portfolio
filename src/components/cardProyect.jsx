@@ -1,5 +1,5 @@
 import React from 'react';
-import { proyects } from './proyects.js';
+import { proyects } from '../proyects.js';
 
 const CardProyect = () => {
 	return proyects.proyectsTotals.map((proyect) => {

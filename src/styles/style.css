@@ -59,9 +59,9 @@ body {
 			border: none;
 			margin: 0 1rem;
 
-			img {
-				filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
-				background-color: transparent;
+			svg {
+				fill: #fff;
+
 				border: none;
 				display: block;
 				@media (width <= 550px) {
@@ -73,7 +73,8 @@ body {
 			:hover {
 				cursor: pointer;
 				scale: 1.1;
-				transition: 0.25s ease-in-out;
+				transition: 0.2s ease-in-out;
+				fill: #bababa;
 			}
 		}
 	}
@@ -129,7 +130,7 @@ body {
 				h4 {
 					font-size: clamp(0.8rem, 1.2vw, 1.3rem);
 					padding: 0;
-					margin:  -0.5rem 0 0 0;
+					margin: -0.5rem 0 0 0;
 				}
 			}
 
@@ -183,14 +184,34 @@ body {
 
 					button {
 						display: flex;
-						background-color: #005daa;
-						border: none;
-						border-radius: 0.3rem;
-						padding: 0.2rem;
+						padding-top: 0.25rem;
+						padding-bottom: 0.25rem;
+						padding-left: 0.5rem;
+						padding-right: 0.5rem;
+						column-gap: 0.5rem;
 						justify-content: center;
 						align-items: center;
-						gap: 0.2rem;
-						font-size: clamp(0.5rem, 1.2vw, 1rem);
+						border-radius: 9999px;
+						border-width: 1px;
+						font-size: 0.75rem;
+						line-height: 1rem;
+						background-image: linear-gradient(
+							to right top,
+							#c0c0c0,
+							#484848,
+							#3c3c3c,
+							#2e2e2e,
+							#242424,
+							#151515,
+							#000000
+						);
+						transition-property: transform;
+						transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+						transition-duration: 300ms;
+
+						:hover {
+							scale: 1.05;
+						}
 
 						svg {
 							fill: #fff;
@@ -290,7 +311,7 @@ body {
 							}
 
 							li {
-								background-color: #005daa;
+								background-image: linear-gradient(to top, #113263, #123c74, #104786, #0c5298, #005daa);
 								border-radius: 0.3rem;
 								padding: 0.2rem;
 								font-size: 1.1rem;
@@ -306,5 +327,80 @@ body {
 				}
 			}
 		}
+		#section-aboutMe {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			color: #fff;
+			margin-bottom: 2rem;
+
+			h1 {
+				font-size: clamp(1.8rem, 1.2vw, 2rem);
+				margin: 0 0 1rem 0;
+				align-self: flex-start;
+			}
+
+			img {
+				width: calc(5rem + 6vw);
+
+				object-fit: cover;
+				border-radius: 6rem;
+				margin: 1rem auto;
+			}
+
+			p {
+				font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+				margin: 0 0 1rem 0;
+			}
+
+			button {
+				background-image: linear-gradient(to top, #113263, #123c74, #104786, #0c5298, #005daa);
+				border: none;
+				border-radius: 0.3rem;
+				padding: 0.2rem;
+				font-size: clamp(0.5rem, 1.2vw, 1rem);
+				color: #fff;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 0.2rem;
+				cursor: pointer;
+				@media (width <= 550px) {
+					font-size: 0.8rem;
+				}
+
+				a {
+					color: #fff;
+					text-decoration: none;
+				}
+
+				svg {
+					fill: #fff;
+					@media (width <= 550px) {
+						width: 0.7rem;
+						height: 0.7rem;
+					}
+				}
+			}
+		}
 	}
+}
+
+body::-webkit-scrollbar {
+	width: 0.6rem;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: hsl(195, 100%, 51%);
+	border-radius: 0.5rem;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+	background-color: #0286b2;
+}
+
+body::-webkit-scrollbar-track {
+	background-color: #150828;
+	border: #150828 0.1rem solid;
 }
