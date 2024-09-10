@@ -275,6 +275,8 @@ body {
 				}
 
 				.card-proyect {
+					display: flex;
+					flex-direction: column;
 					height: 25rem;
 					padding: 0.4rem;
 					background-color: #150828;
@@ -296,22 +298,20 @@ body {
 						h2 {
 							margin-bottom: 0.5rem;
 							color: #2cc9ff;
-							@media (width <= 550px) {
-								font-size: 1.2rem;
-							}
+							font-size: clamp(1.25rem, 1.2vw, 1.4rem);
 						}
 
 						p {
 							margin-bottom: 0.5rem;
-							@media (width <= 550px) {
-								font-size: 0.9rem;
-							}
+							font-size: clamp(0.85rem, 1.2vw, 1rem);
+							text-wrap: wrap;
 						}
 
 						.list-proyect {
 							display: flex;
 							list-style: none;
 							gap: 0.5rem;
+							flex-wrap: wrap;
 							@media (width <= 550px) {
 								gap: 0.5rem;
 							}
@@ -324,9 +324,7 @@ body {
 								color: #fff;
 								justify-content: center;
 								align-items: center;
-								@media (width <= 550px) {
-									font-size: 0.8rem;
-								}
+								font-size: clamp(0.65rem, 1.2vw, 0.8rem);
 							}
 						}
 					}
