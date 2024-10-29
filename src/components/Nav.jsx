@@ -1,10 +1,10 @@
 const Nav = () => {
 	return (
-		<nav className='flex justify-between flex-row w-11/12 m-auto mt-1 md:mt-8'>
-			<ul id='listNav' className=' flex text-white gap-8 items-center'>
-				<li>Proyectos</li>
-				<li>Sobre Mi</li>
-				<li>Tecnologías</li>
+		<nav className='flex my-1 mx-auto md:my-8 w-[90vw] justify-between flex-row min-h-8'>
+			<ul id='listNav' className=' flex text-white gap-8 items-center mx-8'>
+				<li><a href="/">Proyectos</a></li>
+				<li><a href="/">Sobre Mi</a></li>
+				<li><a href="/">Tecnologías</a></li>
 			</ul>
 			<button>
 				<svg
