@@ -1,25 +1,31 @@
 const Nav = () => {
 	const styles = {
 		li: 'hover:scale-110 cursor-pointer hover:text-[#2cc9ff] hover:duration-200 hover:ease-in-out',
-		a: 'border-b-white border-solid hover:border-b-2',
+		a: 'border-b-white border-solid hover:border-b-2 text-white text-xs md:text-lg'
 	}
 
 	return (
 		<nav className='flex my-1 mx-auto md:my-8 w-[90vw] justify-between flex-row min-h-8'>
-			<ul className=' flex my-0 mx-0 md:mx-8 gap-4 text-white text-lg self-center items-center'>
+			<ul className=' flex my-0 mx-0 md:mx-8 gap-4  self-center items-center'>
 				<li className={styles.li}>
-					<a className={styles.a} href='/'>Proyectos</a>
+					<a className={styles.a} href='/'>
+						Proyectos
+					</a>
 				</li>
 				<li className={styles.li}>
-					<a className={styles.a} href='/'>Sobre Mi</a>
+					<a className={styles.a} href='/'>
+						Sobre Mi
+					</a>
 				</li>
 				<li className={styles.li}>
-					<a className={styles.a} href='/'>Tecnologías</a>
+					<a className={styles.a} href='/'>
+						Tecnologías
+					</a>
 				</li>
 			</ul>
-			<button className="bg-transparent border-none my-0 mx-4 ">
+			<button className='bg-transparent border-none my-0 mx-4 '>
 				<svg
-				className="hover:scale-110 hover:duration-200 hover:ease-in-out hover:fill-gray-400"
+					className='hover:scale-110 hover:duration-200 hover:ease-in-out hover:fill-gray-400 w-4 h-4 md:w-6 md:h-6'
 					stroke='currentColor'
 					fill='white'
 					strokeWidth='0'
