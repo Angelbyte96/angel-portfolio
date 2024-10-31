@@ -12,7 +12,7 @@ const style = {
 		<img class='rounded-3xl aspect-[1380/920]' src={img} alt={title} />
 	</a>
 	<h2 class='text-xl md:text-2xl text-[#2cc9ff]'>{title}</h2>
-	<p class='text-sm md:text-base text-wrap'>{body}</p>
+	<p class='prose text-sm md:text-base text-wrap'>{body}</p>
 	<ul class='flex gap-2 flex-wrap'>
 		{tags.map((tag) => <li class={style.li}>{tag}</li>)}
 	</ul>
