@@ -1,5 +1,6 @@
 ---
-import { getCollection } from 'astro:content'
+import { ClientRouter } from 'astro:transitions'
+import { getCollection, getEntry } from 'astro:content'
 
 export const getStaticPaths = async () => {
 	const allProyects = await getCollection('allProyects')
@@ -11,8 +12,10 @@ export const getStaticPaths = async () => {
 }
 
 const { proyect } = Astro.props
-const { data } = proyect
-const { title } = data
+const { data, slug } = proyect
+const { title, img, tags } = data
+const entry = await getEntry('allProyects', slug)
+const { Content } = await entry.render()
 ---
 
 <!doctype html>
@@ -21,8 +24,21 @@ const { title } = data
 		<meta charset='UTF-8' />
 		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 		<title>{`${title}`}</title>
+		<ClientRouter />
 	</head>
-	<body class='min-h-screen bg-fixed bg-custom-gradient font-serif'>
-		<h1 class='text-white'>{`${title}`}</h1>
+	<body
+		class='flex flex-col my-1 items-center min-h-screen bg-fixed bg-custom-gradient font-serif'>
+		<main class='flex flex-col gap-6 w-[90vw] md:w-[50vw] mx-auto'>
+			<h1 transition:name={`h1-${title}`} class='text-white text-3xl md:text-5xl self-center'>
+				{`${title}`}
+			</h1>
+			<img
+				transition:name={`img-${slug}`}
+				class='rounded-3xl aspect-[1380/920]'
+				src={img}
+				alt=''
+			/>
+			<div class="prose prose-invert"><Content /></div>
+		</main>
 	</body>
 </html>

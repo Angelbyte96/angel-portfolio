@@ -1,5 +1,5 @@
 ---
-const { title, img, body, tags, slug } = Astro.props
+const { title, img, tags, slug, description } = Astro.props
 
 const style = {
 	li: 'bg-element-list rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center'
@@ -9,10 +9,10 @@ const style = {
 <div
 	class='flex flex-col w-full bg-[#150828] p-2 rounded-2xl gap-2 bg-opacity-50 backdrop-blur-3xl'>
 	<a href={`/proyect/${slug}`} class='mb-2 xl:mb-0 transition hover:scale-105'>
-		<img class='rounded-3xl aspect-[1380/920]' src={img} alt={title} />
+		<img transition:name={`img-${slug}`} class='rounded-3xl aspect-[1380/920]' src={img} alt={title} />
 	</a>
-	<h2 class='text-xl md:text-2xl text-[#2cc9ff]'>{title}</h2>
-	<p class='prose text-sm md:text-base text-wrap'>{body}</p>
+	<h2 transition:name={`h1-${title}`} class='text-xl md:text-2xl text-[#2cc9ff]'>{title}</h2>
+	<p class='prose prose-invert text-sm md:text-base text-wrap'>{description}</p>
 	<ul class='flex gap-2 flex-wrap'>
 		{tags.map((tag) => <li class={style.li}>{tag}</li>)}
 	</ul>

@@ -17,18 +17,16 @@ const allProyects = await getCollection('allProyects')
 		{
 			allProyects.map(async proyect => {
 				const { data, slug } = proyect
-				const { title, img, tags } = data
-				const entry = await getEntry('allProyects', slug)
-				const { Content } = await entry.render()
-				const body = <Content />
+				const { title, img, tags, description } = data
+				
 
 				return (
 					<CardProyects
 						title={title}
 						img={img}
-						body={body}
 						tags={tags}
 						slug={slug}
+						description={description}
 					/>
 				)
 			})
