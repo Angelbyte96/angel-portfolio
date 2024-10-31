@@ -1,0 +1,42 @@
+---
+import Nav from '@components/Nav.astro'
+import Presentation from '@components/Presentation.astro'
+import Proyects from '@components/Proyects.astro'
+import AboutMe from '@/components/AboutMe.astro'
+---
+
+<html lang='en'>
+	<head>
+		<meta charset='utf-8' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='viewport' content='width=device-width' />
+		<meta name='generator' content={Astro.generator} />
+		<title>Angel Guzmán | Desarrollador Web</title>
+		<link rel='canonical' href='https://angelbyte.dev/' />
+	</head>
+	<body class='min-h-screen bg-fixed bg-custom-gradient font-serif'>
+		<Nav />
+		<Presentation />
+		<Proyects />
+		<AboutMe />
+	</body>
+	<style>
+		body::-webkit-scrollbar {
+			width: 0.6rem;
+		}
+
+		body::-webkit-scrollbar-thumb {
+			background-color: hsl(195, 100%, 51%);
+			border-radius: 0.5rem;
+		}
+
+		body::-webkit-scrollbar-thumb:hover {
+			background-color: #0286b2;
+		}
+
+		body::-webkit-scrollbar-track {
+			background-color: #150828;
+			border: #150828 0.1rem solid;
+		}
+	</style>
+</html>
