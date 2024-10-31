@@ -1,4 +1,6 @@
 import { CardProyects } from '@components/CardProyects.jsx'
+import { getCollection } from 'astro:content'
+const allProyects = await getCollection('allProyects')
 
 const Proyects = () => {
 	return (
@@ -12,7 +14,21 @@ const Proyects = () => {
 				de software!
 			</p>
 			<main className='grid grid-cols-1 md:grid-cols-2 grid-rows-[auto]'>
-				<CardProyects />
+				{allProyects.map((proyect, index) => {
+					const { body, data, slug } = proyect
+					const { title, img, tags } = data
+
+					return (
+						<CardProyects
+							key={index}
+							title={title}
+							img={img}
+							body={body}
+							tags={tags}
+							slug={slug}
+						/>
+					)
+				})}
 			</main>
 		</section>
 	)
