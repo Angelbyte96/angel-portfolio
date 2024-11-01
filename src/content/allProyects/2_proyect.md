@@ -2,7 +2,7 @@
 title: Proyecto 2
 description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 img: /comingSoon.webp
-tags: [HTML, CSS, TypeScript]
+tags: [HTML, CSS, React]
 ---
 
 # Proyecto Próximamente
