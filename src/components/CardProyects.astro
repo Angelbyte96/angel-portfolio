@@ -2,18 +2,67 @@
 const { title, img, tags, slug, description } = Astro.props
 
 const style = {
-	li: 'bg-element-list rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center'
+	li: 'bg-element-list rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center',
+	html:
+		'bg-gradient-to-r from-[#E34F26] via-[#FF6D00] to-[#FF4500] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center',
+	css: 'bg-gradient-to-r from-[#1572B6] via-[#1E90FF] to-[#00BFFF] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center',
+	js: 'bg-gradient-to-r from-[#F0DB4F] via-[#FFD700] to-[#FFB300] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center',
+	react:
+		'bg-gradient-to-r from-[#61DAFB] via-[#3AAFC9] to-[#007ACC] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center',
+	node:
+		'bg-gradient-to-r from-[#68A063] via-[#4E8E4D] to-[#3C6E47] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center',
+	TypeScript:
+		'bg-gradient-to-r from-[#007ACC] via-[#005A9E] to-[#003B73] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center',
+	nextjs:
+		'bg-gradient-to-r from-[#333333] via-[#000000] to-[#1A1A1A] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center',
+	express:
+		'bg-gradient-to-r from-[#444444] via-[#555555] to-[#666666] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center',
+	astro:
+		'bg-gradient-to-r from-[#FF5A1F] via-[#FF7A00] to-[#FFD700] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center'
 }
 ---
 
 <div
 	class='flex flex-col w-full bg-[#150828] p-2 rounded-2xl gap-2 bg-opacity-50 backdrop-blur-3xl'>
 	<a href={`/proyect/${slug}`} class='mb-2 xl:mb-0 transition hover:scale-105'>
-		<img transition:name={`img-${slug}`} class='rounded-3xl aspect-[1380/920]' src={img} alt={title} />
+		<img
+			transition:name={`img-${slug}`}
+			class='rounded-3xl aspect-[1380/920]'
+			src={img}
+			alt={title}
+		/>
 	</a>
-	<h2 transition:name={`h1-${title}`} class='text-xl md:text-2xl text-[#2cc9ff]'>{title}</h2>
+	<h2 transition:name={`h1-${title}`} class='text-xl md:text-2xl text-[#2cc9ff]'>
+		{title}
+	</h2>
 	<p class='prose prose-invert text-sm md:text-base text-wrap'>{description}</p>
 	<ul class='flex gap-2 flex-wrap'>
-		{tags.map((tag) => <li class={style.li}>{tag}</li>)}
+		{
+			tags.map(tag => {
+				let tagMinus = tag.toLowerCase()
+				if (tagMinus === 'html') {
+					return <li class={style.html}>{tag}</li>
+				} else if (tagMinus === 'css') {
+					return <li class={style.css}>{tag}</li>
+				} else if (tagMinus === 'javascript') {
+					return <li class={style.js}>{tag}</li>
+				} else if (tagMinus === 'react') {
+					return <li class={style.react}>{tag}</li>
+				} else if (tagMinus === 'nodejs') {
+					return <li class={style.node}>{tag}</li>
+				} else if (tagMinus === 'typescript') {
+					return <li class={style.TypeScript}>{tag}</li>
+				} else if (tagMinus === 'nextjs') {
+					return <li class={style.nextjs}>{tag}</li>
+				} else if (tagMinus === 'expressjs') {
+					return <li class={style.express}>{tag}</li>
+				} else if (tagMinus === 'astro') {
+					return <li class={style.astro}>{tag}</li>
+				}
+			})
+		}
+		<!-- {tags.map((tag) => 
+		<li class={style.li}>{tag}</li>)
+		} -->
 	</ul>
 </div>
