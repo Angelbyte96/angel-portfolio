@@ -27,9 +27,11 @@ const { Content } = await entry.render()
 		<ClientRouter />
 	</head>
 	<body
-		class='flex flex-col my-1 items-center min-h-screen bg-fixed bg-custom-gradient font-serif'>
+		class='flex flex-col my-1 items-center min-h-screen bg-scroll md:bg-fixed bg-custom-gradient font-serif'>
 		<main class='flex flex-col gap-6 w-[90vw] md:w-[50vw] mx-auto'>
-			<h1 transition:name={`h1-${title}`} class='text-white text-3xl md:text-5xl self-center'>
+			<h1
+				transition:name={`h1-${title}`}
+				class='text-white text-3xl md:text-5xl self-center'>
 				{`${title}`}
 			</h1>
 			<img
@@ -38,7 +40,7 @@ const { Content } = await entry.render()
 				src={img}
 				alt=''
 			/>
-			<div class="prose prose-invert"><Content /></div>
+			<div class='prose prose-invert'><Content /></div>
 		</main>
 	</body>
 </html>
