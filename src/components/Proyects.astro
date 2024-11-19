@@ -13,7 +13,7 @@ const allProyects = await getCollection('allProyects')
 		el resultado de mi trabajo. ¡Inspírate y sumérgete en mis proyectos de
 		software!
 	</p>
-	<main class='grid grid-cols-1 md:grid-cols-2 grid-rows-[auto]'>
+	<main class='grid grid-cols-1 md:grid-cols-2 grid-rows-[auto] gap-1'>
 		{
 			allProyects.map(async proyect => {
 				const { data, slug } = proyect
