@@ -5,6 +5,7 @@ import Presentation from '@components/Presentation.astro'
 import Proyects from '@components/Proyects.astro'
 import AboutMe from '@/components/AboutMe.astro'
 import Footer from '@components/Footer.astro'
+import Technologies from '@/components/Technologies.astro'
 ---
 
 <html lang='es'>
@@ -19,6 +20,7 @@ import Footer from '@components/Footer.astro'
 	<body class='min-h-screen bg-scroll md:bg-fixed font-serif selection:bg-fuchsia-700'>
 		<Nav />
 		<Presentation />
+		<Technologies />
 		<Proyects />
 		<AboutMe />
 		<Footer />
@@ -33,12 +35,12 @@ import Footer from '@components/Footer.astro'
 		}
 
 		body::-webkit-scrollbar-thumb {
-			background-color: hsl(195, 100%, 51%);
+			background-color: #7f007f;
 			border-radius: 0.5rem;
 		}
 
 		body::-webkit-scrollbar-thumb:hover {
-			background-color: #0286b2;
+			background-color: #490149;
 		}
 
 		body::-webkit-scrollbar-track {
