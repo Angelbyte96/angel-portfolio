@@ -28,3 +28,7 @@ body::-webkit-scrollbar-track {
 .listTechnologies {
 	@apply flex flex-col justify-center items-center gap-1;
 }
+
+.articlesTechnologies {
+	@apply flex flex-col justify-start items-center py-4 px-2 md:py-4 md:px-2 md:border-solid border-[1px] border-[#0f172a] gap-4 bg-fuchsia-950 backdrop-opacity-5 backdrop-blur-lg rounded-lg;
+}

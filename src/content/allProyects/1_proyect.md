@@ -1,5 +1,5 @@
 ---
-title: Proyecto 1
+title: Proyecto
 description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 img: /comingSoon.webp
 tags: [HTML, CSS, JavaScript]
