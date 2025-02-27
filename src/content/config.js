@@ -8,6 +8,8 @@ const allProyects = defineCollection({
 		img: z.string(),
 		tags: z.array(z.string()),
 		description: z.string(),
+		imgSize: z.string(),
+		styleBody: z.string(),
 	})
 })
 

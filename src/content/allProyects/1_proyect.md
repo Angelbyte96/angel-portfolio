@@ -1,48 +1,68 @@
 ---
-title: Proyecto
-description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-img: /comingSoon.webp
-tags: [HTML, CSS, JavaScript]
+title: Pad Notes
+description: Una aplicación minimalista que te permite escribir, guardar y organizar tus ideas de forma sencilla y segura. ¡Captura y gestiona tus pensamientos al instante!
+img: https://res.cloudinary.com/ddinz4ewu/image/upload/v1740639784/Web.png
+tags: [Astro, Tailwind, React, Strapi]
+imgSize: 695/400
+styleBody: flex flex-col my-1 items-center min-h-screen bg-scroll md:bg-fixed font-serif bgProyect-1 body-proyect-1
 ---
 
-# Proyecto Próximamente
+# Pad Notes
 
-¡Gracias por tu interés! Este proyecto aún está en desarrollo y se publicará pronto. Mientras tanto, aquí tienes un adelanto de lo que incluirá:
+¡Bienvenido a Pad Notes, tu espacio para organizar ideas de forma simple y rápida!
 
 ## Descripción
 
-Este espacio estará dedicado a un proyecto que demuestra habilidades en **desarrollo web**, **diseño interactivo**, y/o **optimización de interfaces**. La idea es que este proyecto aborde una problemática específica o mejore algún aspecto de la experiencia de usuario a través de una solución creativa.
+Pad Notes es una aplicación web minimalista diseñada para escribir, guardar y administrar tus notas de forma intuitiva. Con un diseño limpio y responsivo, permite a los usuarios concentrarse en lo esencial: capturar ideas, pensamientos e información importante sin distracciones. La aplicación integra un sistema de autenticación robusto, ofreciendo tanto registro e inicio de sesión con correo electrónico como opciones de autenticación social (Google y Microsoft). Además, cuenta con un dashboard personal donde podrás crear, editar, eliminar y hasta copiar tus notas con un solo clic.
 
 ## Tecnologías a Utilizar
 
-El proyecto incluirá tecnologías y herramientas modernas, como:
+El proyecto se apoya en las siguientes tecnologías y herramientas modernas:
 
-- **HTML5** y **CSS3** para la estructura y el diseño visual.
-- **JavaScript/React/Vue** para añadir interactividad avanzada y funcionalidad.
-- **Git y GitHub** para control de versiones y colaboración.
-- **Servicios de despliegue** como Vercel o Netlify para compartir la aplicación.
+- **Astro y React**: Para construir una interfaz dinámica, modular y de alto rendimiento.
+- **Tailwind CSS**: Para un diseño responsivo, minimalista y personalizable.
+- **HTML5 y CSS3**: Para la estructura y el estilo visual.
+- **Strapi**: Como backend headless CMS, gestionando la autenticación, registro de usuarios y almacenamiento de notas.
+- **Git y GitHub**: Para el control de versiones y la colaboración en el desarrollo.
+- **Servicios de Despliegue**: Opciones como Vercel o Netlify para la publicación y el acceso rápido a la aplicación.
 
 ## Funcionalidades Clave
 
-Algunas de las características que se planean para este proyecto incluyen:
+Entre las características más destacadas de Pad Notes se incluyen:
 
-1. **Diseño Responsivo** - Adaptable para cualquier dispositivo.
-2. **Interfaz Interactiva** - Con animaciones y transiciones.
-3. **Optimización SEO** - Para mejorar la visibilidad en buscadores.
-4. **Integración de APIs** - Para enriquecer la información y el contenido en tiempo real.
+1. **Autenticación Segura**
+
+   - Registro e inicio de sesión mediante email y contraseña.
+   - Opciones de autenticación social con Google y Microsoft.
+
+2. **Gestión de Notas**
+
+   - Creación de notas con título y contenido.
+   - Edición y eliminación de notas existentes.
+   - Funcionalidad para copiar el contenido de las notas al portapapeles.
+
+3. **Dashboard Personalizado**
+
+   - Visualización y administración de todas tus notas en un entorno intuitivo.
+   - Interfaz interactiva que facilita la navegación y organización.
+
+4. **Diseño Responsivo e Interactivo**
+   - Adaptable a cualquier dispositivo, asegurando una experiencia fluida tanto en móviles como en escritorio.
+   - Animaciones sutiles y transiciones que mejoran la experiencia de usuario.
 
 ## Capturas de Pantalla
 
-*(Próximamente se mostrarán imágenes representativas del proyecto en acción)*
+![Login](https://res.cloudinary.com/ddinz4ewu/image/upload/v1740539807/Login.png)
+![Home](https://res.cloudinary.com/ddinz4ewu/image/upload/v1740544025/Home.png)
+![Lista de Notas](https://res.cloudinary.com/ddinz4ewu/image/upload/v1740544195/Notes.png)
 
 ## Estado del Proyecto
 
-Este proyecto se encuentra en la fase de planificación y diseño. La implementación está programada para el próximo mes, ¡así que mantente atento a las actualizaciones!
+Pad Notes se encuentra actualmente en fase de desarrollo avanzado. La implementación del sistema de autenticación, gestión de notas y diseño responsivo ya está operativa, y se están realizando ajustes finales y pruebas de usabilidad. Muy pronto podrás acceder a la versión beta y comenzar a disfrutar de una forma sencilla y ordenada de gestionar tus ideas.
 
 ## Comentarios
 
-Si tienes alguna sugerencia o idea que te gustaría ver en este proyecto, no dudes en compartirla. ¡Todas las ideas son bienvenidas!
+Si tienes alguna sugerencia, idea o comentario para mejorar Pad Notes, ¡queremos escucharte! Tu feedback es fundamental para seguir perfeccionando esta experiencia.
 
 ---
-
-*Este es un espacio temporal para un proyecto en desarrollo que pronto estará disponible en esta sección del portafolio.*
+_Este es el espacio de Pad Notes, una aplicación creada con pasión para ayudarte a organizar tus pensamientos de manera efectiva. ¡Gracias por tu interés y mantente atento a las próximas actualizaciones!_

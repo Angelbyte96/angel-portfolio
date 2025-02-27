@@ -1,6 +1,8 @@
 ---
 import { ClientRouter } from 'astro:transitions'
 import { getCollection, getEntry } from 'astro:content'
+import '@/index.css'
+import '@/scrollbarProyects.css'
 
 export const getStaticPaths = async () => {
 	const allProyects = await getCollection('allProyects')
@@ -13,7 +15,9 @@ export const getStaticPaths = async () => {
 
 const { proyect } = Astro.props
 const { data, slug } = proyect
-const { title, img, tags } = data
+const { title, img, imgSize, styleBody } = data
+console.log(data);
+
 const entry = await getEntry('allProyects', slug)
 const { Content } = await entry.render()
 ---
@@ -27,8 +31,8 @@ const { Content } = await entry.render()
 		<ClientRouter />
 	</head>
 	<body
-		class='flex flex-col my-1 items-center min-h-screen bg-scroll md:bg-fixed bg-custom-gradient font-serif'>
-		<main class='flex flex-col gap-6 w-[90vw] md:w-[50vw] mx-auto'>
+		class={styleBody}>
+		<main class='flex flex-col items-center gap-6 w-[90vw] md:w-6/12 mx-auto'>
 			<h1
 				transition:name={`h1-${title}`}
 				class='text-white text-3xl md:text-5xl self-center'>
@@ -36,11 +40,11 @@ const { Content } = await entry.render()
 			</h1>
 			<img
 				transition:name={`img-${slug}`}
-				class='rounded-3xl aspect-[1380/920]'
+				class=`rounded-3xl aspect-[${imgSize}]`
 				src={img}
 				alt=''
 			/>
-			<div class='prose prose-invert'><Content /></div>
+			<div class='mx-auto prose prose-invert w-full max-w-none'><Content /></div>
 		</main>
 	</body>
 </html>

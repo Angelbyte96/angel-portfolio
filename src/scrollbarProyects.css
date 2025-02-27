@@ -1,0 +1,18 @@
+/* Estilos para la scrollbar de los proyectos */
+body.body-proyect-1::-webkit-scrollbar {
+	width: 0.6rem;
+}
+
+body.body-proyect-1::-webkit-scrollbar-thumb {
+	background-color: #055f35;
+	border-radius: 0.5rem;
+}
+
+body.body-proyect-1::-webkit-scrollbar-thumb:hover {
+	background-color: #0f1c16;
+}
+
+body.body-proyect-1::-webkit-scrollbar-track {
+	background-color: #150828;
+	border: #150828 0.1rem solid;
+}

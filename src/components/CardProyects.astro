@@ -17,14 +17,20 @@ const style = {
 		'bg-gradient-to-r from-[#333333] via-[#000000] to-[#1A1A1A] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center shadow-md shadow-[#333333]/40',
 	express:
 		'bg-gradient-to-r from-[#444444] via-[#555555] to-[#666666] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center shadow-md shadow-[#444444]/40',
+	tailwind:
+		'bg-gradient-to-r from-[#38B2AC] via-[#319795] to-[#2C7A7B] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center shadow-md shadow-[#38B2AC]/40',
+	strapi:
+		'bg-gradient-to-r from-[#5851DB] via-[#6554C0] to-[#7E5ACB] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center shadow-md shadow-[#5851DB]/40',
 	astro:
-		'bg-gradient-to-r from-[#FF5A1F] via-[#FF7A00] to-[#FFD700] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center shadow-md shadow-[#FF5A1F]/40'
+		'bg-gradient-to-r from-[#2A0656] via-[#6128A1] to-[#8A3ACF] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center shadow-md shadow-[#2A0656]/40'
 }
 ---
 
 <article
-	class='flex flex-col w-full bg-[#4747474e] p-2 rounded-2xl gap-2 bg-opacity-50 backdrop-blur-3xl'>
-	<a href={`/proyect/${slug}`} class='mb-2 xl:mb-0 transition hover:scale-[1.02]'>
+	class='flex flex-col w-full bg-[#4747474e] p-3 rounded-2xl gap-2 bg-opacity-50 backdrop-blur-3xl'>
+	<a
+		href={`/proyect/${slug}`}
+		class='mb-2 xl:mb-0 transition hover:scale-[1.02]'>
 		<img
 			transition:name={`img-${slug}`}
 			class='rounded-3xl aspect-[1380/920]'
@@ -58,6 +64,10 @@ const style = {
 					return <li class={style.express}>{tag}</li>
 				} else if (tagMinus === 'astro') {
 					return <li class={style.astro}>{tag}</li>
+				} else if (tagMinus === 'tailwind') {
+					return <li class={style.tailwind}>{tag}</li>
+				} else if (tagMinus === 'strapi') {
+					return <li class={style.strapi}>{tag}</li>
 				}
 			})
 		}
