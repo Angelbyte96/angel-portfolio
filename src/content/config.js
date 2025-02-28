@@ -10,6 +10,7 @@ const allProyects = defineCollection({
 		description: z.string(),
 		imgSize: z.string(),
 		styleBody: z.string(),
+		url: z.string(),
 	})
 })
 

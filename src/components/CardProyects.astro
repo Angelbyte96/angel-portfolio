@@ -1,5 +1,6 @@
 ---
-const { title, img, tags, slug, description, imgSize } = Astro.props
+const { title, img, tags, slug, description, imgSize, url } = Astro.props
+import { ArrowUpRight } from 'lucide-react'
 
 const style = {
 	li: 'bg-element-list rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center',
@@ -38,9 +39,22 @@ const style = {
 			alt={title}
 		/>
 	</a>
-	<h2 transition:name={`h1-${title}`} class='text-xl md:text-2xl text-[#2cc9ff]'>
-		{title}
-	</h2>
+	<div class='flex w-full justify-center'>
+		<a
+			href='https://app-notas-omega.vercel.app/'
+			target="_blank"
+			rel="noopener noreferrer"
+			class='flex items-center w-fit justify-center group decoration-neutral-500 decoration-dotted underline-offset-[5px] hover:underline'>
+			<h2
+				transition:name={`h1-${title}`}
+				class='text-xl md:text-2xl text-[#2cc9ff] uppercase'>
+				{title}
+			</h2>
+			<ArrowUpRight
+				className='opacity-50 duration-150 group-hover:-translate-y-1 group-hover:translate-x-[1.5px] group-hover:scale-110 group-hover:opacity-100 w-5 text-[#97dbff] group-hover:text-[#297c97]'
+			/>
+		</a>
+	</div>
 	<p class='prose prose-invert text-sm md:text-base text-wrap'>{description}</p>
 	<ul class='flex self-start md:px-7 gap-2 flex-wrap'>
 		{
