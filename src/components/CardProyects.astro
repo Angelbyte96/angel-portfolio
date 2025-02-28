@@ -1,5 +1,7 @@
 ---
-const { title, img, tags, slug, description } = Astro.props
+const { title, img, tags, slug, description, imgSize } = Astro.props
+console.log(Astro.props);
+
 
 const style = {
 	li: 'bg-element-list rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center',
@@ -27,13 +29,13 @@ const style = {
 ---
 
 <article
-	class='flex flex-col w-full bg-[#4747474e] p-3 rounded-2xl gap-2 bg-opacity-50 backdrop-blur-3xl'>
+	class='flex flex-col items-center w-fit bg-[#4747474e] px-2 py-4 rounded-2xl gap-2 bg-opacity-50 backdrop-blur-3xl'>
 	<a
 		href={`/proyect/${slug}`}
 		class='mb-2 xl:mb-0 transition hover:scale-[1.02]'>
 		<img
 			transition:name={`img-${slug}`}
-			class='rounded-3xl aspect-[1380/920]'
+			class=`rounded-3xl aspect-[${imgSize}]`
 			src={img}
 			alt={title}
 		/>
@@ -42,7 +44,7 @@ const style = {
 		{title}
 	</h2>
 	<p class='prose prose-invert text-sm md:text-base text-wrap'>{description}</p>
-	<ul class='flex gap-2 flex-wrap'>
+	<ul class='flex self-start md:px-7 gap-2 flex-wrap'>
 		{
 			tags.map(tag => {
 				let tagMinus = tag.toLowerCase()
