@@ -16,6 +16,9 @@ export default {
 				'element-list':
 					'linear-gradient(to top, #113263, #123c74, #104786, #0c5298, #005daa)'
 			},
+			fontFamily: {
+				monda: ['monda-400', 'sans-serif']
+			},
 			typography: theme => ({
 				DEFAULT: {
 					css: {
@@ -39,7 +42,7 @@ export default {
 				},
 				invert: {
 					css: {
-						color: theme('colors.gray.100'),
+						color: theme('colors.gray.200'),
 						a: {
 							color: theme('colors.blue.300'),
 							'&:hover': {
@@ -53,8 +56,18 @@ export default {
 							backgroundColor: theme('colors.gray.500')
 						},
 						'ul > li::marker': {
-							color: theme('colors.gray.300'),
+							color: theme('colors.white')
 						},
+						'ol > li::marker': {
+							color: theme('colors.white')
+						},
+						/* Cambiar tamaño de letra */
+						p: {
+							fontSize: '1.2rem'
+						},
+						li: {
+							fontSize: '1.2rem'
+						}
 					}
 				}
 			})

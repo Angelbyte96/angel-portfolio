@@ -58,7 +58,7 @@ Entre las características más destacadas de Pad Notes se incluyen:
 
 ## Estado del Proyecto
 
-Pad Notes se encuentra actualmente en fase de desarrollo avanzado. La implementación del sistema de autenticación, gestión de notas y diseño responsivo ya está operativa, y se están realizando ajustes finales y pruebas de usabilidad. Muy pronto podrás acceder a la versión beta y comenzar a disfrutar de una forma sencilla y ordenada de gestionar tus ideas.
+Pad Notes se encuentra en constante desarrollo. El sistema de autenticación, la gestión de notas y el diseño responsivo ya están en funcionamiento, y actualmente se implementan ajustes y pruebas de usabilidad para optimizar su rendimiento. Accede ahora y descubre una forma sencilla y organizada de gestionar tus ideas.
 
 ## Comentarios
 
