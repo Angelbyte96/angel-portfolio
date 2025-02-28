@@ -17,7 +17,6 @@ export const getStaticPaths = async () => {
 const { proyect } = Astro.props
 const { data, slug } = proyect
 const { title, img, imgSize, styleBody, url } = data
-console.log(url)
 
 const entry = await getEntry('allProyects', slug)
 const { Content } = await entry.render()
