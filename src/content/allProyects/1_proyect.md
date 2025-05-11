@@ -1,7 +1,7 @@
 ---
 title: Pad Notes
 description: Una aplicación minimalista que te permite escribir, guardar y organizar tus ideas de forma sencilla y segura. ¡Captura y gestiona tus pensamientos al instante!
-img: https://res.cloudinary.com/ddinz4ewu/image/upload/v1740639784/Web.png
+img: https://res.cloudinary.com/ddinz4ewu/image/upload/v1746399001/Recursos/PadNotes/Home.png
 tags: [Astro, Tailwind, React, Strapi]
 imgSize: "695/400"
 styleBody: flex flex-col my-1 items-center min-h-screen bg-scroll md:bg-fixed font-serif bgProyect-1 body-proyect-1
