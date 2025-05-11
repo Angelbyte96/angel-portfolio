@@ -5,7 +5,7 @@ img: https://res.cloudinary.com/ddinz4ewu/image/upload/v1746399001/Recursos/PadN
 tags: [Astro, Tailwind, React, Strapi]
 imgSize: "695/400"
 styleBody: flex flex-col my-1 items-center min-h-screen bg-scroll md:bg-fixed font-serif bgProyect-1 body-proyect-1
-url: https://app-notas-omega.vercel.app/
+url: https://pad-notes-omega.vercel.app/
 ---
 
 # Pad Notes
