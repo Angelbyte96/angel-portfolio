@@ -25,11 +25,11 @@ const allProyects = await getCollection('allProyects')
 		> en mis proyectos de
 		<span class='text-cyan-400'>software</span>!
 	</p>
-	<main class='grid place-items-center md:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-2'>
+	<main class='grid place-items-stretch md:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4'>
 		{
 			allProyects.map(async proyect => {
 				const { data, slug } = proyect
-				const { title, img, tags, description, imgSize } = data
+				const { title, img, tags, description, imgSize, url } = data
 
 				return (
 					<CardProyects
@@ -39,6 +39,7 @@ const allProyects = await getCollection('allProyects')
 						slug={slug}
 						description={description}
 						imgSize={imgSize}
+						url={url}
 					/>
 				)
 			})
