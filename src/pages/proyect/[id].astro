@@ -1,7 +1,7 @@
 ---
 import '@/styles/global.css'
 import '@/styles/scrollbarProyects.css'
-import { getCollection, getEntry } from 'astro:content'
+import { getCollection, render } from 'astro:content'
 import { ClientRouter } from 'astro:transitions'
 import { Link } from 'lucide-react'
 
@@ -9,17 +9,16 @@ export const getStaticPaths = async () => {
 	const allProyects = await getCollection('allProyects')
 
 	return allProyects.map(proyect => ({
-		params: { id: proyect.slug },
+		params: { id: proyect.id },
 		props: { proyect }
 	}))
 }
 
 const { proyect } = Astro.props
-const { data, slug } = proyect
+const { data, id } = proyect
 const { title, img, imgSize, styleBody, url } = data
 
-const entry = await getEntry('allProyects', slug)
-const { Content } = await entry.render()
+const { Content } = await render(proyect)
 ---
 
 <!doctype html>
