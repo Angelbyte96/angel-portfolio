@@ -1,0 +1,53 @@
+---
+import { technologiesList } from '@/components/Technologies/mocks/technologiesList'
+import TechItem from './TechItem.astro'
+
+const { frontEnd, backEnd, learning, tools } = technologiesList
+---
+
+<section
+	class='flex flex-col justify-center items-center gap-3 w-[90vw] md:w-[50vw] my-2 md:my-4 mx-auto text-white'>
+	<h1 class='self-start mb-2 md:mb-4 text-3xl md:text-4xl' id='technologies'>
+		Tecnologías
+	</h1>
+	<p>
+		En mi travesía por el emocionante universo del <span class='text-yellow-300'
+			>desarrollo de software</span
+		>, he adquirido conocimientos y habilidades en diversas <span
+			class='text-[#2cc9ff]'>herramientas</span
+		> y
+		<span class='text-[#2cc9ff]'>plataformas</span>. <span class='text-yellow-300'
+			>Mi stack tecnológico abarca:</span
+		>
+	</p>
+	<div
+		class='md:grid-cols-2 grid md:w-full gap-1'
+		style={{
+			boxShadow: '0 0 100px -45px #cb00cb'
+		}}>
+		<article class='articlesTechnologies'>
+			<h1 class='text-[#2cc9ff] font-bold text-xl md:text-2xl'>FrontEnd</h1>
+			<ul class='flex flex-wrap justify-center items-center gap-4'>
+				{frontEnd.map(item => <TechItem icon={item.icon} name={item.name} />)}
+			</ul>
+		</article>
+		<article class='articlesTechnologies'>
+			<h1 class='text-[#33cc36] font-bold text-xl md:text-2xl'>BackEnd</h1>
+			<ul class='flex flex-wrap justify-center items-center gap-4'>
+				{backEnd.map(item => <TechItem icon={item.icon} name={item.name} />)}
+			</ul>
+		</article>
+		<article class='articlesTechnologies'>
+			<h1 class='text-[#b9b7fb] font-bold text-xl md:text-2xl'>Aprendiendo</h1>
+			<ul class='flex flex-wrap justify-center items-center gap-4'>
+				{learning.map(item => <TechItem icon={item.icon} name={item.name} />)}
+			</ul>
+		</article>
+		<article class='articlesTechnologies'>
+			<h1 class='text-[#ff7c7c] font-bold text-xl md:text-2xl'>Herramientas</h1>
+			<ul class='flex flex-wrap justify-center items-center gap-4'>
+				{tools.map(item => <TechItem icon={item.icon} name={item.name} />)}
+			</ul>
+		</article>
+	</div>
+</section>

@@ -1,0 +1,19 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'li'> {
+	name: string
+	icon: string
+}
+
+const { name, icon, class: className, ...rest } = Astro.props
+---
+
+<li
+	class:list={['flex flex-col justify-center items-center gap-1', className]}
+	{...rest}>
+	<svg width='50' height='50'>
+		<use xlink:href=`/icons.svg#${icon}`></use>
+	</svg>
+	<span class='text-xs md:text-lg'>{name}</span>
+</li>
