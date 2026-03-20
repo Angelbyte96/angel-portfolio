@@ -1,6 +1,18 @@
 @import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
-@config '../../tailwind.config.mjs';
+@theme {
+  /* Custom breakpoints (antes en theme.extend.screens) */
+  --breakpoint-xs: 374px;
+
+  /* Custom fonts (antes en theme.extend.fontFamily) */
+  --font-monda: 'monda-400', sans-serif;
+
+  /* Custom gradients (antes en theme.extend.backgroundImage) */
+  --background-image-custom-gradient: linear-gradient(to right top, #0e031b, #150828, #1a0c34, #200c41, #290a4e);
+  --background-image-button-gradient: linear-gradient(to right top, #c0c0c0, #484848, #3c3c3c, #2e2e2e, #242424, #151515, #000000);
+  --background-image-element-list: linear-gradient(to top, #113263, #123c74, #104786, #0c5298, #005daa);
+}
 
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
@@ -66,4 +78,51 @@ body::-webkit-scrollbar-track {
 
 .articlesTechnologies {
 	@apply flex flex-col justify-start items-center py-4 px-2 md:py-4 md:px-2 md:border-solid border border-[#0f172a] gap-4 bg-fuchsia-950 backdrop-opacity-5 backdrop-blur-lg rounded-lg;
+}
+
+/* Custom typography (prose) styles ported from tailwind.config.mjs */
+@layer components {
+	.prose {
+		color: var(--color-gray-900);
+	}
+	.prose a {
+		color: var(--color-blue-600);
+	}
+	.prose a:hover {
+		color: var(--color-blue-800);
+	}
+	.prose ol > li::before {
+		color: var(--color-gray-500);
+	}
+	.prose ul > li::before {
+		background-color: var(--color-gray-600);
+	}
+	.prose main {
+		width: 100%;
+	}
+	
+	.prose-invert {
+		color: var(--color-gray-200);
+	}
+	.prose-invert a {
+		color: var(--color-blue-300);
+	}
+	.prose-invert a:hover {
+		color: var(--color-blue-400);
+	}
+	.prose-invert ol > li::before {
+		color: var(--color-gray-400);
+	}
+	.prose-invert ul > li::before {
+		background-color: var(--color-gray-500);
+	}
+	.prose-invert ul > li::marker,
+	.prose-invert ol > li::marker {
+		color: var(--color-white);
+	}
+	
+	.prose p,
+	.prose li {
+		font-size: 1.2rem;
+	}
 }
