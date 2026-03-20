@@ -1,6 +1,7 @@
 ---
+import TechArticle from '@/components/Technologies/components/TechArticle.astro'
+import TechItem from '@/components/Technologies/components/TechItem.astro'
 import { technologiesList } from '@/components/Technologies/mocks/technologiesList'
-import TechItem from './TechItem.astro'
 
 const { frontEnd, backEnd, learning, tools } = technologiesList
 ---
@@ -25,29 +26,17 @@ const { frontEnd, backEnd, learning, tools } = technologiesList
 		style={{
 			boxShadow: '0 0 100px -45px #cb00cb'
 		}}>
-		<article class='articlesTechnologies'>
-			<h1 class='text-[#2cc9ff] font-bold text-xl md:text-2xl'>FrontEnd</h1>
-			<ul class='flex flex-wrap justify-center items-center gap-4'>
-				{frontEnd.map(item => <TechItem icon={item.icon} name={item.name} />)}
-			</ul>
-		</article>
-		<article class='articlesTechnologies'>
-			<h1 class='text-[#33cc36] font-bold text-xl md:text-2xl'>BackEnd</h1>
-			<ul class='flex flex-wrap justify-center items-center gap-4'>
-				{backEnd.map(item => <TechItem icon={item.icon} name={item.name} />)}
-			</ul>
-		</article>
-		<article class='articlesTechnologies'>
-			<h1 class='text-[#b9b7fb] font-bold text-xl md:text-2xl'>Aprendiendo</h1>
-			<ul class='flex flex-wrap justify-center items-center gap-4'>
-				{learning.map(item => <TechItem icon={item.icon} name={item.name} />)}
-			</ul>
-		</article>
-		<article class='articlesTechnologies'>
-			<h1 class='text-[#ff7c7c] font-bold text-xl md:text-2xl'>Herramientas</h1>
-			<ul class='flex flex-wrap justify-center items-center gap-4'>
-				{tools.map(item => <TechItem icon={item.icon} name={item.name} />)}
-			</ul>
-		</article>
+		<TechArticle title='FrontEnd'>
+			{frontEnd.map(item => <TechItem icon={item.icon} name={item.name} />)}
+		</TechArticle>
+		<TechArticle title='BackEnd'>
+			{backEnd.map(item => <TechItem icon={item.icon} name={item.name} />)}
+		</TechArticle>
+		<TechArticle title='Aprendiendo'>
+			{learning.map(item => <TechItem icon={item.icon} name={item.name} />)}
+		</TechArticle>
+		<TechArticle title='Herramientas'>
+			{tools.map(item => <TechItem icon={item.icon} name={item.name} />)}
+		</TechArticle>
 	</div>
 </section>

@@ -1,4 +1,16 @@
-export const technologiesList = {
+interface Technology {
+	name: string
+	icon: string
+}
+
+interface TechnologiesList {
+	frontEnd: Technology[]
+	backEnd: Technology[]
+	learning: Technology[]
+	tools: Technology[]
+}
+
+export const technologiesList: TechnologiesList = {
 	frontEnd: [
 		{
 			name: 'HTML',
