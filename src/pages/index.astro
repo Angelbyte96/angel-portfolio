@@ -1,30 +1,14 @@
 ---
 import AboutMe from '@/components/AboutMe.astro'
+import Presentation from '@/components/Presentation.astro'
+import Proyects from '@/components/Proyects.astro'
 import Technologies from '@/components/Technologies/Technologies.astro'
-import '@/styles/global.css'
-import Footer from '@components/Footer.astro'
-import Nav from '@components/Nav.astro'
-import Presentation from '@components/Presentation.astro'
-import Proyects from '@components/Proyects.astro'
-import { ClientRouter } from 'astro:transitions'
+import Layout from '@/layouts/Layout.astro'
 ---
 
-<html lang='es'>
-	<head>
-		<meta charset='utf-8' />
-		<link rel='icon' type='image/svg+xml' href='/avatar.webp' />
-		<meta name='viewport' content='width=device-width' />
-		<title>Angel Guzmán | Desarrollador Web</title>
-		<link rel='canonical' href='https://angelbyte.dev/' />
-		<ClientRouter />
-	</head>
-	<body
-		class='min-h-screen bg-scroll md:bg-fixed selection:bg-fuchsia-700 font-monda'>
-		<Nav />
-		<Presentation />
-		<Technologies />
-		<Proyects />
-		<AboutMe />
-		<Footer />
-	</body>
-</html>
+<Layout title='Angel Guzmán | Desarrollador Web'>
+	<Presentation />
+	<Technologies />
+	<Proyects />
+	<AboutMe />
+</Layout>
