@@ -23,19 +23,11 @@ const { title } = Astro.props
 		<ClientRouter />
 	</head>
 	<body
-		class='grid grid-rows-[auto_1fr_auto] h-dvh dark:bg-black min-h-screen bg-scroll md:bg-fixed selection:bg-fuchsia-700 font-monda'>
+		class='grid grid-rows-[auto_1fr_auto] dark:bg-black min-h-svh bg-scroll md:bg-fixed selection:bg-fuchsia-700 font-monda'>
 		<Nav />
-		<main>
+		<main class='w-11/12 md:w-9/12 mx-auto'>
 			<slot />
 		</main>
 		<Footer />
 	</body>
 </html>
-<style>
-	html,
-	body {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
-</style>
