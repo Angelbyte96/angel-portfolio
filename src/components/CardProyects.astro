@@ -23,7 +23,11 @@ const style = {
 	strapi:
 		'bg-linear-to-r from-[#5851DB] via-[#6554C0] to-[#7E5ACB] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center shadow-md shadow-[#5851DB]/40',
 	astro:
-		'bg-linear-to-r from-[#2A0656] via-[#6128A1] to-[#8A3ACF] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center shadow-md shadow-[#2A0656]/40'
+		'bg-linear-to-r from-[#2A0656] via-[#6128A1] to-[#8A3ACF] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center shadow-md shadow-[#2A0656]/40',
+	turso:
+		'bg-linear-to-r from-[#4FF8D2] via-[#2FDFB6] to-[#0BA986] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-[#0A2B2D] justify-center items-center shadow-md shadow-[#4FF8D2]/40',
+	clerk:
+		'bg-linear-to-r from-[#FFFFFF] via-[#F0F0F0] to-[#E0E0E0] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-[#000000] justify-center items-center shadow-md shadow-[#FFFFFF]/40'
 }
 ---
 
@@ -42,8 +46,8 @@ const style = {
 	<div class='flex w-full justify-center'>
 		<a
 			href={url}
-			target="_blank"
-			rel="noopener noreferrer"
+			target='_blank'
+			rel='noopener noreferrer'
 			class='flex items-center w-fit justify-center group decoration-neutral-500 decoration-dotted underline-offset-[5px] hover:underline'>
 			<h2
 				transition:name={`h1-${title}`}
@@ -82,6 +86,10 @@ const style = {
 					return <li class={style.tailwind}>{tag}</li>
 				} else if (tagMinus === 'strapi') {
 					return <li class={style.strapi}>{tag}</li>
+				} else if (tagMinus === 'turso') {
+					return <li class={style.turso}>{tag}</li>
+				} else if (tagMinus === 'clerk') {
+					return <li class={style.clerk}>{tag}</li>
 				}
 			})
 		}
