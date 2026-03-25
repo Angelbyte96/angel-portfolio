@@ -2,8 +2,8 @@
 title: SpendList
 description: Una aplicación web moderna para crear y gestionar listas de compras con control de gastos en tiempo real. ¡Organiza tus compras y controla tu presupuesto de forma inteligente!
 img: https://res.cloudinary.com/ddinz4ewu/image/upload/v1757182123/Recursos/SpendList/HomeDescrip_owsnkv.webp
-tags: [Astro, React, TypeScript, Tailwind CSS, Turso]
-imgSize: "695/400"
+tags: [Astro, React, TypeScript, Tailwind, Turso]
+imgSize: '695/400'
 styleBody: flex flex-col my-1 items-center min-h-screen bg-scroll md:bg-fixed font-serif bgProyect-2 body-proyect-2
 url: https://spend-list-rouge.vercel.app/
 ---
@@ -34,24 +34,20 @@ El proyecto se apoya en las siguientes tecnologías y herramientas modernas:
 Entre las características más destacadas de SpendList se incluyen:
 
 1. **Gestión Inteligente de Listas**
-
    - Creación, edición y eliminación de listas de compras personalizadas.
    - Organización por categorías y prioridades.
 
 2. **Control de Gastos en Tiempo Real**
-
    - Cálculo automático del precio total con desglose por artículo.
    - Visualización de estadísticas de cantidad de artículos y totales.
    - Seguimiento del presupuesto planificado vs. gastado.
 
 3. **Gestión de Artículos**
-
    - Agregar, editar y eliminar artículos de las listas.
    - Marcar artículos como comprados o pendientes.
    - Especificar precios, cantidades y notas adicionales.
 
 4. **Experiencia de Usuario Moderna**
-
    - Modo oscuro/claro con alternancia intuitiva.
    - Diseño responsivo optimizado para móviles y desktop.
    - Interfaz limpia construida con componentes modernos.
@@ -76,4 +72,5 @@ SpendList se encuentra en desarrollo activo. Las funcionalidades principales de 
 Si tienes alguna sugerencia, idea o comentario para mejorar SpendList, ¡queremos escucharte! Tu feedback es fundamental para seguir perfeccionando esta herramienta de gestión de compras y hacer que sea aún más útil para organizar tu vida cotidiana.
 
 ---
+
 _Este es el espacio de SpendList, una aplicación creada con pasión para ayudarte a gestionar tus compras de manera inteligente y eficiente. ¡Gracias por tu interés y mantente atento a las próximas actualizaciones!_
