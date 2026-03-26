@@ -1,0 +1,46 @@
+---
+const { title, img, tags, slug, description, imgSize, url } = Astro.props
+import { isTagKey, stylesTags } from '@components/CardProyects/mocks/stylesTags'
+import { ArrowUpRight } from 'lucide-react'
+---
+
+<article
+	class='flex flex-col items-center w-fit bg-[#4747474e] px-2 py-4 rounded-2xl gap-2 bg-opacity-50 backdrop-blur-3xl'>
+	<a
+		href={`/proyect/${slug}/`}
+		class='mb-2 xl:mb-0 transition hover:scale-[1.02]'>
+		<img
+			transition:name={`img-${slug}`}
+			class=`rounded-3xl aspect-[${imgSize}]`
+			src={img}
+			alt={title}
+		/>
+	</a>
+	<div class='flex w-full justify-center'>
+		<a
+			href={url}
+			target='_blank'
+			rel='noopener noreferrer'
+			class='flex items-center w-fit justify-center group decoration-neutral-500 decoration-dotted underline-offset-[5px] hover:underline'>
+			<h2
+				transition:name={`h1-${title}`}
+				class='text-xl md:text-2xl text-[#2cc9ff] uppercase'>
+				{title}
+			</h2>
+			<ArrowUpRight
+				className='opacity-50 duration-150 group-hover:-translate-y-1 group-hover:translate-x-[1.5px] group-hover:scale-110 group-hover:opacity-100 w-5 text-[#97dbff] group-hover:text-[#297c97]'
+			/>
+		</a>
+	</div>
+	<p class='prose prose-invert text-sm md:text-base text-wrap'>{description}</p>
+	<ul class='flex w-fit text-start self-start mt-auto gap-2 flex-wrap'>
+		{
+			tags.map((tag: string) => {
+				const key = tag.toLowerCase()
+				console.log(`${key}: ${isTagKey(key)}`)
+				const style = isTagKey(key) ? stylesTags[key] : stylesTags.li
+				return <li class={style}>{tag}</li>
+			})
+		}
+	</ul>
+</article>

@@ -1,8 +1,4 @@
----
-const { title, img, tags, slug, description, imgSize, url } = Astro.props
-import { ArrowUpRight } from 'lucide-react'
-
-const style = {
+export const stylesTags = {
 	li: 'bg-element-list rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center',
 	html:
 		'bg-linear-to-r from-[#E34F26] via-[#FF6D00] to-[#FF4500] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center shadow-md shadow-[#E34F26]/40',
@@ -12,7 +8,7 @@ const style = {
 		'bg-linear-to-r from-[#61DAFB] via-[#3AAFC9] to-[#007ACC] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center shadow-md shadow-[#61DAFB]/40',
 	node:
 		'bg-linear-to-r from-[#68A063] via-[#4E8E4D] to-[#3C6E47] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center shadow-md shadow-[#68A063]/40',
-	TypeScript:
+	typescript:
 		'bg-linear-to-r from-[#007ACC] via-[#005A9E] to-[#003B73] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center shadow-md shadow-[#007ACC]/40',
 	nextjs:
 		'bg-linear-to-r from-[#333333] via-[#000000] to-[#1A1A1A] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-white justify-center items-center shadow-md shadow-[#333333]/40',
@@ -29,72 +25,9 @@ const style = {
 	clerk:
 		'bg-linear-to-r from-[#FFFFFF] via-[#F0F0F0] to-[#E0E0E0] rounded-md p-[0.2rem] text-[0.65rem] md:text-sm text-[#000000] justify-center items-center shadow-md shadow-[#FFFFFF]/40'
 }
----
 
-<article
-	class='flex flex-col items-center w-fit bg-[#4747474e] px-2 py-4 rounded-2xl gap-2 bg-opacity-50 backdrop-blur-3xl'>
-	<a
-		href={`/proyect/${slug}/`}
-		class='mb-2 xl:mb-0 transition hover:scale-[1.02]'>
-		<img
-			transition:name={`img-${slug}`}
-			class=`rounded-3xl aspect-[${imgSize}]`
-			src={img}
-			alt={title}
-		/>
-	</a>
-	<div class='flex w-full justify-center'>
-		<a
-			href={url}
-			target='_blank'
-			rel='noopener noreferrer'
-			class='flex items-center w-fit justify-center group decoration-neutral-500 decoration-dotted underline-offset-[5px] hover:underline'>
-			<h2
-				transition:name={`h1-${title}`}
-				class='text-xl md:text-2xl text-[#2cc9ff] uppercase'>
-				{title}
-			</h2>
-			<ArrowUpRight
-				className='opacity-50 duration-150 group-hover:-translate-y-1 group-hover:translate-x-[1.5px] group-hover:scale-110 group-hover:opacity-100 w-5 text-[#97dbff] group-hover:text-[#297c97]'
-			/>
-		</a>
-	</div>
-	<p class='prose prose-invert text-sm md:text-base text-wrap'>{description}</p>
-	<ul class='flex w-fit text-start self-start mt-auto gap-2 flex-wrap'>
-		{
-			tags.map(tag => {
-				let tagMinus = tag.toLowerCase()
-				if (tagMinus === 'html') {
-					return <li class={style.html}>{tag}</li>
-				} else if (tagMinus === 'css') {
-					return <li class={style.css}>{tag}</li>
-				} else if (tagMinus === 'javascript') {
-					return <li class={style.js}>{tag}</li>
-				} else if (tagMinus === 'react') {
-					return <li class={style.react}>{tag}</li>
-				} else if (tagMinus === 'nodejs') {
-					return <li class={style.node}>{tag}</li>
-				} else if (tagMinus === 'typescript') {
-					return <li class={style.TypeScript}>{tag}</li>
-				} else if (tagMinus === 'nextjs') {
-					return <li class={style.nextjs}>{tag}</li>
-				} else if (tagMinus === 'expressjs') {
-					return <li class={style.express}>{tag}</li>
-				} else if (tagMinus === 'astro') {
-					return <li class={style.astro}>{tag}</li>
-				} else if (tagMinus === 'tailwind') {
-					return <li class={style.tailwind}>{tag}</li>
-				} else if (tagMinus === 'strapi') {
-					return <li class={style.strapi}>{tag}</li>
-				} else if (tagMinus === 'turso') {
-					return <li class={style.turso}>{tag}</li>
-				} else if (tagMinus === 'clerk') {
-					return <li class={style.clerk}>{tag}</li>
-				}
-			})
-		}
-		<!-- {tags.map((tag) => 
-		<li class={style.li}>{tag}</li>)
-		} -->
-	</ul>
-</article>
+export type TagKey = keyof typeof stylesTags
+
+export function isTagKey(tag: string): tag is TagKey {
+	return tag in stylesTags
+}
