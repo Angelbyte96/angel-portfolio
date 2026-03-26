@@ -37,7 +37,6 @@ import { ArrowUpRight } from 'lucide-react'
 		{
 			tags.map((tag: string) => {
 				const key = tag.toLowerCase()
-				console.log(`${key}: ${isTagKey(key)}`)
 				const style = isTagKey(key) ? stylesTags[key] : stylesTags.li
 				return <li class={style}>{tag}</li>
 			})
