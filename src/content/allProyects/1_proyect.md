@@ -3,8 +3,8 @@ title: Pad Notes
 description: Una aplicación web moderna para crear y gestionar notas personales, con autenticación segura y base de datos distribuida edge-first. ¡Captura y gestiona tus pensamientos al instante!
 img: https://res.cloudinary.com/ddinz4ewu/image/upload/v1746399001/Recursos/PadNotes/Home.png
 tags: [Astro, Tailwind, React, TypeScript, Turso, Clerk]
-imgSize: '695/400'
-styleBody: flex flex-col items-center min-h-screen bg-scroll md:bg-fixed font-serif bgProyect-1 body-proyect-1
+imgSize: "695/400"
+styleBody: flex flex-col items-center min-h-screen bg-scroll md:bg-fixed font-monda bgProyect-1 body-proyect-1
 url: https://pad-notes-omega.vercel.app/
 ---
 
