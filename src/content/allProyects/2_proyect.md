@@ -2,9 +2,9 @@
 title: SpendList
 description: Una aplicación web moderna para crear y gestionar listas de compras con control de gastos en tiempo real. ¡Organiza tus compras y controla tu presupuesto de forma inteligente!
 img: https://res.cloudinary.com/ddinz4ewu/image/upload/v1757182123/Recursos/SpendList/HomeDescrip_owsnkv.webp
-tags: [Astro, React, TypeScript, Tailwind, Turso]
+tags: [Astro, React, TypeScript, Tailwind]
 imgSize: '695/400'
-styleBody: flex flex-col my-1 items-center min-h-screen bg-scroll md:bg-fixed font-serif bgProyect-2 body-proyect-2
+styleBody: flex flex-col items-center min-h-screen bg-scroll md:bg-fixed font-serif bgProyect-2 body-proyect-2
 url: https://spend-list-rouge.vercel.app/
 ---
 
