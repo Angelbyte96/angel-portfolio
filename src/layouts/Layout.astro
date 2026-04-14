@@ -5,29 +5,30 @@ import '@/styles/global.css'
 import { ClientRouter } from 'astro:transitions'
 
 interface Props {
-	title: string
+  title: string
 }
 
 const { title } = Astro.props
 ---
 
 <!doctype html>
-<html lang='es' class="scroll-smooth scroll-pt-16 md:scroll-pt-20">
-	<head>
-		<meta charset='UTF-8' />
-		<meta name='viewport' content='width=device-width' />
-		<link rel='icon' type='image/svg+xml' href='/avatar.webp' />
-		<meta name='generator' content={Astro.generator} />
-		<link rel='canonical' href='https://angelbyte.dev/' />
-		<title>{title}</title>
-		<ClientRouter />
-	</head>
-	<body
-		class='grid grid-rows-[auto_1fr_auto] dark:bg-black min-h-svh bg-scroll md:bg-fixed selection:bg-fuchsia-700 font-monda'>
-		<Nav />
-		<main class='w-11/12 md:w-9/12 mx-auto'>
-			<slot />
-		</main>
-		<Footer />
-	</body>
+<html lang="es" class="scroll-pt-16 scroll-smooth md:scroll-pt-20">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/avatar.webp" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href="https://angelbyte.dev/" />
+    <title>{title}</title>
+    <ClientRouter />
+  </head>
+  <body
+    class="font-monda grid min-h-svh grid-rows-[auto_1fr_auto] bg-scroll selection:bg-fuchsia-700 md:bg-fixed dark:bg-black"
+  >
+    <Nav />
+    <main class="mx-auto w-11/12 md:w-9/12">
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>

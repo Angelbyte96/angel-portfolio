@@ -7,36 +7,38 @@ const { frontEnd, backEnd, learning, tools } = technologiesList
 ---
 
 <section
-	class='flex flex-col justify-center items-center gap-3 w-full my-2 md:my-4 mx-auto text-white'>
-	<h1 class='self-start mb-2 md:mb-4 text-3xl md:text-4xl' id='technologies'>
-		Tecnologías
-	</h1>
-	<p>
-		En mi travesía por el emocionante universo del <span class='text-yellow-300'
-			>desarrollo de software</span
-		>, he adquirido conocimientos y habilidades en diversas <span
-			class='text-[#2cc9ff]'>herramientas</span
-		> y
-		<span class='text-[#2cc9ff]'>plataformas</span>. <span class='text-yellow-300'
-			>Mi stack tecnológico abarca:</span
-		>
-	</p>
-	<div
-		class='md:grid-cols-2 grid md:w-full gap-1'
-		style={{
-			boxShadow: '0 0 100px -45px #cb00cb'
-		}}>
-		<TechArticle title='FrontEnd'>
-			{frontEnd.map(item => <TechItem icon={item.icon} name={item.name} />)}
-		</TechArticle>
-		<TechArticle title='BackEnd'>
-			{backEnd.map(item => <TechItem icon={item.icon} name={item.name} />)}
-		</TechArticle>
-		<TechArticle title='Aprendiendo'>
-			{learning.map(item => <TechItem icon={item.icon} name={item.name} />)}
-		</TechArticle>
-		<TechArticle title='Herramientas'>
-			{tools.map(item => <TechItem icon={item.icon} name={item.name} />)}
-		</TechArticle>
-	</div>
+  class="mx-auto my-2 flex w-full flex-col items-center justify-center gap-3 text-white md:my-4"
+>
+  <h1 class="mb-2 self-start text-3xl md:mb-4 md:text-4xl" id="technologies">
+    Tecnologías
+  </h1>
+  <p>
+    En mi travesía por el emocionante universo del <span class="text-yellow-300"
+      >desarrollo de software</span
+    >, he adquirido conocimientos y habilidades en diversas <span
+      class="text-[#2cc9ff]">herramientas</span
+    > y
+    <span class="text-[#2cc9ff]">plataformas</span>. <span
+      class="text-yellow-300">Mi stack tecnológico abarca:</span
+    >
+  </p>
+  <div
+    class="grid gap-1 md:w-full md:grid-cols-2"
+    style={{
+      boxShadow: '0 0 100px -45px #cb00cb',
+    }}
+  >
+    <TechArticle title="FrontEnd">
+      {frontEnd.map(item => <TechItem icon={item.icon} name={item.name} />)}
+    </TechArticle>
+    <TechArticle title="BackEnd">
+      {backEnd.map(item => <TechItem icon={item.icon} name={item.name} />)}
+    </TechArticle>
+    <TechArticle title="Aprendiendo">
+      {learning.map(item => <TechItem icon={item.icon} name={item.name} />)}
+    </TechArticle>
+    <TechArticle title="Herramientas">
+      {tools.map(item => <TechItem icon={item.icon} name={item.name} />)}
+    </TechArticle>
+  </div>
 </section>

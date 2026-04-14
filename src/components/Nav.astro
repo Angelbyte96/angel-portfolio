@@ -1,14 +1,14 @@
 ---
 const styles = {
-  li: "hover:scale-110 cursor-pointer hover:text-[#2cc9ff] hover:duration-200 hover:ease-in-out",
-  a: "border-b-white border-solid hover:border-b-2 text-white text-xs md:text-lg",
-};
+  li: 'hover:scale-110 cursor-pointer hover:text-[#2cc9ff] hover:duration-200 hover:ease-in-out',
+  a: 'border-b-white border-solid hover:border-b-2 text-white text-xs md:text-lg',
+}
 ---
 
 <nav
-  class="sticky top-0 z-10 flex mx-auto w-full justify-between flex-row min-h-12 bg-black/30 backdrop-blur-md px-4"
+  class="sticky top-0 z-10 mx-auto flex min-h-12 w-full flex-row justify-between bg-black/30 px-4 backdrop-blur-md"
 >
-  <ul class="flex my-0 mx-0 md:mx-8 gap-4 self-center items-center">
+  <ul class="mx-0 my-0 flex items-center gap-4 self-center md:mx-8">
     <li class={styles.li}>
       <a class={styles.a} href="/#inicio"> Inicio </a>
     </li>
@@ -22,9 +22,9 @@ const styles = {
       <a class={styles.a} href="/#aboutme"> Sobre Mi </a>
     </li>
   </ul>
-  <button class="hidden bg-transparent border-none my-0 mx-4">
+  <button class="mx-4 my-0 hidden border-none bg-transparent">
     <svg
-      class="hover:scale-110 hover:duration-200 hover:ease-in-out hover:fill-gray-400 w-4 h-4 md:w-6 md:h-6"
+      class="h-4 w-4 hover:scale-110 hover:fill-gray-400 hover:duration-200 hover:ease-in-out md:h-6 md:w-6"
       stroke="currentColor"
       fill="white"
       viewBox="0 0 512 512"
