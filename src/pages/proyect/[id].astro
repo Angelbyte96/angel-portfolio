@@ -1,55 +1,66 @@
 ---
-import '@/styles/global.css'
-import '@/styles/scrollbarProyects.css'
-import { getCollection, render } from 'astro:content'
-import { ClientRouter } from 'astro:transitions'
-import { Link } from 'lucide-react'
+import Nav from "@/components/Nav.astro";
+import "@/styles/global.css";
+import "@/styles/scrollbarProyects.css";
+import { getCollection, render } from "astro:content";
+import { ClientRouter } from "astro:transitions";
+import { Link } from "lucide-react";
 
 export const getStaticPaths = async () => {
-	const allProyects = await getCollection('allProyects')
+	const allProyects = await getCollection("allProyects");
 
-	return allProyects.map(proyect => ({
+	return allProyects.map((proyect) => ({
 		params: { id: proyect.id },
-		props: { proyect }
-	}))
-}
+		props: { proyect },
+	}));
+};
 
-const { proyect } = Astro.props
-const { data, id } = proyect
-const { title, img, imgSize, styleBody, url } = data
+const { proyect } = Astro.props;
+const { data, id } = proyect;
+const { title, img, imgSize, styleBody, url } = data;
 
-const { Content } = await render(proyect)
+const { Content } = await render(proyect);
 ---
 
 <!doctype html>
-<html lang='es'>
+<html lang="es">
 	<head>
-		<meta charset='UTF-8' />
-		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>{`${title}`}</title>
 		<ClientRouter />
 	</head>
 	<body class={styleBody}>
+		<Nav />
 		<main
-			class='flex flex-col items-center gap-6 w-[90vw] md:w-6/12 mx-auto font-monda'>
+			class="flex flex-col items-center gap-6 w-[90vw] md:w-6/12 mx-auto font-monda"
+		>
 			<h1
 				transition:name={`h1-${title}`}
-				class='text-white text-3xl md:text-5xl self-center uppercase whitespace-nowrap'>
+				class="text-white text-3xl md:text-5xl self-center uppercase whitespace-nowrap"
+			>
 				{`${title}`}
 			</h1>
-			<div class='relative inline-block'>
-				<a href={url} target='_blank' rel='noopener noreferrer' class='group'>
+			<div class="relative inline-block">
+				<a
+					href={url}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="group"
+				>
 					<img
 						class={`rounded-3xl aspect-[${imgSize}] transition-all duration-300 group-hover:animate-pulse`}
 						src={img}
-						alt=''
+						alt=""
 					/>
 					<Link
-						className='absolute top-2 right-2 text-gray-500 group-hover:text-gray-700 cursor-pointer w-5 h-5 md:w-10 md:h-10'
+						className="absolute top-2 right-2 text-gray-500 group-hover:text-gray-700 cursor-pointer w-5 h-5 md:w-10 md:h-10"
 					/>
 				</a>
 			</div>
-			<div class='mx-auto prose prose-invert w-full max-w-none'><Content /></div>
+			<div class="mx-auto prose prose-invert w-full max-w-none">
+				<Content />
+			</div>
 		</main>
 	</body>
 </html>
