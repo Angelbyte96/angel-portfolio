@@ -32,6 +32,14 @@ export const technologiesList: TechnologiesList = {
       name: 'Tailwind',
       icon: 'tailwind',
     },
+    {
+      name: 'React',
+      icon: 'react',
+    },
+    {
+      name: 'Astro',
+      icon: 'astro',
+    }
   ],
   backEnd: [
     {
@@ -41,16 +49,8 @@ export const technologiesList: TechnologiesList = {
   ],
   learning: [
     {
-      name: 'React',
-      icon: 'react',
-    },
-    {
       name: 'C#',
       icon: 'csharp',
-    },
-    {
-      name: 'Astro',
-      icon: 'astro',
     },
     {
       name: 'NextJS',
