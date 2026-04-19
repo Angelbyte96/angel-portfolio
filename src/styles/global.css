@@ -136,8 +136,4 @@ body::-webkit-scrollbar-track {
     color: var(--color-white);
   }
 
-  .prose p,
-  .prose li {
-    font-size: 1.2rem;
-  }
 }

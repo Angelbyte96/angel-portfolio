@@ -16,5 +16,5 @@ const { name, icon, class: className, ...rest } = Astro.props
   <svg width="50" height="50">
     <use xlink:href=`/icons.svg#${icon}`></use>
   </svg>
-  <span class="text-xs md:text-lg">{name}</span>
+  <span class="text-sm md:text-base">{name}</span>
 </li>
