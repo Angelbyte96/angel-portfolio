@@ -39,7 +39,7 @@ export const technologiesList: TechnologiesList = {
     {
       name: 'Astro',
       icon: 'astro',
-    }
+    },
   ],
   backEnd: [
     {

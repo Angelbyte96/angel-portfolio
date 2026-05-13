@@ -135,5 +135,4 @@ body::-webkit-scrollbar-track {
   .prose-invert ol > li::marker {
     color: var(--color-white);
   }
-
 }
