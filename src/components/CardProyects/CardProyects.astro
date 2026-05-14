@@ -1,7 +1,7 @@
 ---
 const { title, img, tags, slug, description, imgSize, url } = Astro.props
 import { isTagKey, stylesTags } from '@components/CardProyects/mocks/stylesTags'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight } from '@lucide/astro'
 ---
 
 <article
@@ -32,7 +32,7 @@ import { ArrowUpRight } from 'lucide-react'
         {title}
       </h2>
       <ArrowUpRight
-        className="w-5 text-[#97dbff] opacity-50 duration-150 group-hover:translate-x-[1.5px] group-hover:-translate-y-1 group-hover:scale-110 group-hover:text-[#297c97] group-hover:opacity-100"
+        class="w-5 text-[#97dbff] opacity-50 duration-150 group-hover:translate-x-[1.5px] group-hover:-translate-y-1 group-hover:scale-110 group-hover:text-[#297c97] group-hover:opacity-100"
       />
     </a>
   </div>

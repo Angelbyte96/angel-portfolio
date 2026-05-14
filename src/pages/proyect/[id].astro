@@ -4,7 +4,7 @@ import '@/styles/global.css'
 import '@/styles/scrollbarProyects.css'
 import { getCollection, render } from 'astro:content'
 import { ClientRouter } from 'astro:transitions'
-import { Link } from 'lucide-react'
+import { Link } from '@lucide/astro'
 
 export const getStaticPaths = async () => {
   const allProyects = await getCollection('allProyects')
@@ -49,7 +49,7 @@ const { Content } = await render(proyect)
             alt=""
           />
           <Link
-            className="absolute top-2 right-2 h-5 w-5 cursor-pointer text-gray-500 group-hover:text-gray-700 md:h-10 md:w-10"
+            class="absolute top-2 right-2 h-5 w-5 cursor-pointer text-gray-500 group-hover:text-gray-700 md:h-10 md:w-10"
           />
         </a>
       </div>
