@@ -16,6 +16,14 @@
       "sessions": 2,
       "memories": 0,
       "prompts": 12
+    },
+    {
+      "id": "814408b8",
+      "created_by": "angelbyte",
+      "created_at": "2026-05-14T00:59:38Z",
+      "sessions": 0,
+      "memories": 1,
+      "prompts": 1
     }
   ]
 }
