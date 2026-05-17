@@ -14,6 +14,15 @@ export default tseslint.config(
   ...tseslint.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
   {
+    files: ['**/*.astro'],
+    languageOptions: {
+      parserOptions: {
+        parser: tseslint.parser,
+        extraFileExtensions: ['.astro'],
+      },
+    },
+  },
+  {
     files: ['**/*.{js,mjs,cjs,jsx,ts,tsx}'],
     languageOptions: {
       ecmaVersion: 'latest',
