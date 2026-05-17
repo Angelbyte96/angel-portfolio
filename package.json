@@ -38,12 +38,5 @@
     "astro": "6.3.2",
     "tailwindcss": "^4.3.0"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "workerd",
-      "esbuild",
-      "sharp"
-    ]
-  },
   "packageManager": "pnpm@11.1.2"
 }
