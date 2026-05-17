@@ -24,6 +24,14 @@
       "sessions": 0,
       "memories": 1,
       "prompts": 1
+    },
+    {
+      "id": "6524aa21",
+      "created_by": "angelbyte",
+      "created_at": "2026-05-17T07:52:07Z",
+      "sessions": 3,
+      "memories": 5,
+      "prompts": 19
     }
   ]
 }
