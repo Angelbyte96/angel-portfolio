@@ -1,0 +1,27 @@
+---
+import { Moon, Sun } from '@lucide/astro'
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'button'> {}
+
+const { class: className, ...rest } = Astro.props
+---
+
+<button id='theme-toggle' class:list={['', className]} {...rest}>
+	<span class='hidden dark:block'>
+		<Sun />
+	</span>
+	<span class='block dark:hidden'>
+		<Moon />
+	</span>
+</button>
+<script>
+	document.addEventListener('astro:page-load', () => {
+		const button = document.querySelector('#theme-toggle')
+
+		button?.addEventListener('click', () => {
+			const isDark = document.documentElement.classList.toggle('dark')
+			localStorage.setItem('theme', isDark ? 'dark' : 'light')
+		})
+	})
+</script>

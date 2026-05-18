@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* Custom breakpoints (antes en theme.extend.screens) */
   --breakpoint-xs: 374px;
