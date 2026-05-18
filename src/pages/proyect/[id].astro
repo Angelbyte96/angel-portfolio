@@ -29,11 +29,19 @@ const { Content } = await render(proyect)
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{`${title}`}</title>
     <ClientRouter />
+    <script is:inline>
+			const storedTheme = localStorage.getItem('theme')
+			const defaultTheme = 'dark'
+			const initialTheme = storedTheme || defaultTheme
+
+			document.documentElement.classList.toggle('dark', initialTheme === 'dark')
+			localStorage.setItem('theme', initialTheme)
+		</script>
   </head>
   <body class={styleBody}>
     <Nav />
     <main
-      class="font-monda mx-auto flex w-[90vw] flex-col items-center gap-6 md:w-6/12"
+      class="font-sans mx-auto flex w-[90vw] flex-col items-center gap-6 md:w-6/12"
     >
       <h1
         transition:name={`h1-${title}`}

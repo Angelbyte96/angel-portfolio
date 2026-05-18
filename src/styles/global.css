@@ -18,8 +18,8 @@
   --color-border-subtle: #94a3b8;
 
   /* Acentos de texto para light mode */
-  --color-highlight: #db2777; /* fucsia vivo */
-  --color-accent: #0055ff;    /* azul eléctrico */
+  --color-highlight: #be123c; /* fucsia vivo */
+  --color-accent: #047857; /* azul eléctrico */
 
   /* Efecto glow del fondo (estilo Astro) */
   --glow-color-1: rgba(168, 85, 247, 0.35); /* núcleo lila sutil */
@@ -28,8 +28,7 @@
 
   /* Sombra de cards - suave para light mode */
   --card-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.05),
-    0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 
   /* Scrollbar */
   --scrollbar-thumb: #cbd5e1;
@@ -59,7 +58,7 @@
 
   /* Acentos para dark mode */
   --color-highlight: #fde047; /* amarillo neón */
-  --color-accent: #2cc9ff;    /* cyan eléctrico */
+  --color-accent: #2cc9ff; /* cyan eléctrico */
 
   /* Efecto glow del fondo (estilo Astro) */
   --glow-color-1: rgba(168, 85, 247, 0.25);
@@ -81,11 +80,12 @@
   --glow-accent: rgba(168, 85, 247, 0.4);
 }
 
-@theme {
+@theme inline {
   /* Breakpoints personalizados */
   --breakpoint-xs: 374px;
 
   /* Fonts personalizadas */
+  --font-sans: var(--font-plus-jakarta);
   --font-monda: 'monda-400', sans-serif;
 
   /* Gradientes personalizados */
@@ -162,7 +162,11 @@ body::before {
   background-color: transparent;
   background-image:
     radial-gradient(circle at 50% 0%, var(--glow-color-1) 0%, transparent 35%),
-    radial-gradient(ellipse 80% 50% at 50% -10%, var(--glow-color-2) 0%, transparent 60%),
+    radial-gradient(
+      ellipse 80% 50% at 50% -10%,
+      var(--glow-color-2) 0%,
+      transparent 60%
+    ),
     radial-gradient(circle at 50% 10%, var(--glow-color-3) 0%, transparent 80%);
   background-size: 100vw 100vh;
   background-repeat: no-repeat;
