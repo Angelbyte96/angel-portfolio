@@ -5,7 +5,7 @@ import { ArrowUpRight } from '@lucide/astro'
 ---
 
 <article
-  class="flex w-fit flex-col items-center gap-2 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-2 py-4 shadow-[var(--card-shadow)] backdrop-blur-lg"
+  class="flex w-fit flex-col items-center gap-2 rounded-2xl border border-(--color-border) bg-(--color-bg-card) px-2 py-4 shadow-(--card-shadow) backdrop-blur-lg"
 >
   <a
     href={`/proyect/${slug}/`}
@@ -27,7 +27,7 @@ import { ArrowUpRight } from '@lucide/astro'
     >
       <h2
         transition:name={`h1-${title}`}
-        class="text-xl font-semibold text-[var(--color-accent)] uppercase md:text-2xl"
+        class="text-xl font-semibold text-(--color-accent) uppercase md:text-2xl"
       >
         {title}
       </h2>
@@ -36,7 +36,9 @@ import { ArrowUpRight } from '@lucide/astro'
       />
     </a>
   </div>
-  <p class="prose prose-invert text-sm text-wrap md:text-base">{description}</p>
+  <p class="text-(--color-text-muted) text-sm text-wrap md:text-base">
+    {description}
+  </p>
   <ul class="mt-auto flex w-fit flex-wrap gap-2 self-start text-start">
     {
       tags.map((tag: string) => {
