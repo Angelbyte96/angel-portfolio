@@ -7,30 +7,34 @@
    THEME SYSTEM — Obsidian/Light
    ============================================ */
 :root {
-  /* Backgrounds */
-  --color-bg: #ffffff;
-  --color-bg-elevated: #f5f5f5;
-  --color-bg-card: #fafafa;
+  /* Backgrounds - Off-white for contrast with white cards */
+  --color-bg: #f8fafc;
+  --color-bg-elevated: #f1f5f9;
+  --color-bg-card: #ffffff;
   
   /* Text */
   --color-text: #171717;
   --color-text-muted: #525252;
   
-  /* Borders */
-  --color-border: #e5e5e5;
-  --color-border-subtle: #d4d4d4;
+  /* Borders - Darker for better definition */
+  --color-border: #cbd5e1;
+  --color-border-subtle: #94a3b8;
   
-  /* Accent */
-  --color-accent: #2cc9ff;
+  /* Accent colors with good contrast on white */
+  --color-highlight: #d97706; /* amber-600 - excellent on white */
+  --color-accent: #0284c7;    /* cyan-700 - excellent on white */
   
-  /* Background Glow Effect (Astro Style) */
-  --glow-color-1: rgba(56, 189, 248, 0.15); /* Light Blue */
-  --glow-color-2: rgba(59, 130, 246, 0.1);  /* Deeper Blue */
-  --glow-color-3: rgba(147, 197, 253, 0.05); /* Very light blue edge */
+  /* Background Glow Effect (Light Mode - more intensity) */
+  --glow-color-1: rgba(168, 85, 247, 0.35); /* Subtle lilac core */
+  --glow-color-2: rgba(56, 189, 248, 0.45);  /* Spread cyan/blue */
+  --glow-color-3: rgba(147, 197, 253, 0.35); /* Very light blue edge */
+  
+  /* Card shadow - soft drop shadow for light mode */
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   
   /* Scrollbar */
-  --scrollbar-thumb: #d4d4d4;
-  --scrollbar-thumb-active: #a3a3a3;
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-thumb-active: #94a3b8;
   
   /* Selection */
   --selection-bg: #404040;
@@ -51,12 +55,17 @@
   --color-border: #262626;
   --color-border-subtle: #404040;
   
-  /* Accent stays the same — it's already good */
+  /* Accent - highlight and accent for dark mode */
+  --color-highlight: #fde047; /* yellow-300 */
+  --color-accent: #2cc9ff;   /* cyan-400 */
   
   /* Background Glow Effect (Astro Style) */
-  --glow-color-1: rgba(168, 85, 247, 0.15); /* Astro Purple */
-  --glow-color-2: rgba(217, 70, 239, 0.1);  /* Astro Fuchsia/Lilac */
-  --glow-color-3: rgba(192, 132, 252, 0.05); /* Very light purple edge */
+  --glow-color-1: rgba(168, 85, 247, 0.25);
+  --glow-color-2: rgba(217, 70, 239, 0.18);
+  --glow-color-3: rgba(192, 132, 252, 0.12);
+  
+  /* Card shadow - darker, more pronounced in dark mode */
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
   
   /* Scrollbar */
   --scrollbar-thumb: #3f3f3f;
@@ -73,7 +82,7 @@
 /* Light mode glow accent */
 :root {
   /* Glow accent for cards - matches the Astro ambient glow (Blue) */
-  --glow-accent: rgba(56, 189, 248, 0.4);
+  --glow-accent: rgba(56, 189, 248, 0.35);
 }
 
 @theme {

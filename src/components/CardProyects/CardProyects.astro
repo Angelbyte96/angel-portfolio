@@ -5,7 +5,7 @@ import { ArrowUpRight } from '@lucide/astro'
 ---
 
 <article
-  class="flex w-fit flex-col items-center gap-2 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-2 py-4 backdrop-blur-lg"
+  class="flex w-fit flex-col items-center gap-2 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-2 py-4 backdrop-blur-lg shadow-[var(--card-shadow)]"
 >
   <a
     href={`/proyect/${slug}/`}
@@ -27,7 +27,7 @@ import { ArrowUpRight } from '@lucide/astro'
     >
       <h2
         transition:name={`h1-${title}`}
-        class="text-xl text-[#2cc9ff] uppercase md:text-2xl"
+        class="text-xl text-[var(--color-accent)] uppercase md:text-2xl"
       >
         {title}
       </h2>
