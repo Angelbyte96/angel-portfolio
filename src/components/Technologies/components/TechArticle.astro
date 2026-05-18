@@ -10,12 +10,14 @@ const { title, class: className, ...rest } = Astro.props
 
 <article
   class:list={[
-    'flex flex-col items-center justify-start gap-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] px-2 py-4 backdrop-blur-lg backdrop-opacity-5 md:border-solid md:px-2 md:py-4 shadow-[var(--card-shadow)]',
+    'flex flex-col items-center justify-start gap-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] px-2 py-4 shadow-[var(--card-shadow)] backdrop-blur-lg backdrop-opacity-5 md:border-solid md:px-2 md:py-4',
     className,
   ]}
   {...rest}
 >
-  <h1 class="text-xl font-bold text-[var(--color-accent)] md:text-2xl">{title}</h1>
+  <h1 class="text-xl font-bold text-[var(--color-accent)] md:text-2xl">
+    {title}
+  </h1>
   <ul class="flex flex-wrap items-center justify-center gap-4">
     <slot />
   </ul>

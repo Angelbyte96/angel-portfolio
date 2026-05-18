@@ -5,59 +5,65 @@ import '@/styles/global.css'
 import { ClientRouter } from 'astro:transitions'
 
 interface Props {
-	title: string
-	bodyClass?: string
-	mainClass?: string
-	hideFooter?: boolean
+  title: string
+  bodyClass?: string
+  mainClass?: string
+  hideFooter?: boolean
 }
 
 const {
-	title,
-	bodyClass = 'font-sans grid min-h-svh grid-rows-[auto_1fr_auto] bg-scroll md:bg-fixed',
-	mainClass = 'mx-auto w-11/12 md:w-9/12',
-	hideFooter = false,
+  title,
+  bodyClass = 'font-sans grid min-h-svh grid-rows-[auto_1fr_auto] bg-scroll md:bg-fixed',
+  mainClass = 'mx-auto w-11/12 md:w-9/12',
+  hideFooter = false,
 } = Astro.props
 ---
 
 <!doctype html>
 <html
-	lang='es'
-	class='scroll-pt-16 scrollbar-thumb-[var(--scrollbar-thumb)] scroll-smooth active:scrollbar-thumb-[var(--scrollbar-thumb-active)] md:scroll-pt-20'>
-	<head>
-		<meta charset='UTF-8' />
-		<meta name='viewport' content='width=device-width' />
-		<link rel='icon' type='image/svg+xml' href='/avatar.webp' />
-		<meta name='generator' content={Astro.generator} />
-		<link rel='canonical' href='https://angelbyte.dev/' />
-		<title>{title}</title>
-		<ClientRouter />
-		<script is:inline>
-			(() => {
-				const applyTheme = () => {
-					const storedTheme = localStorage.getItem('theme')
-					const initialTheme =
-						storedTheme === 'light' || storedTheme === 'dark' ? storedTheme : 'dark'
+  lang="es"
+  class="scroll-pt-16 scrollbar-thumb-[var(--scrollbar-thumb)] scroll-smooth active:scrollbar-thumb-[var(--scrollbar-thumb-active)] md:scroll-pt-20"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/avatar.webp" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href="https://angelbyte.dev/" />
+    <title>{title}</title>
+    <ClientRouter />
+    <script is:inline>
+      ;(() => {
+        const applyTheme = () => {
+          const storedTheme = localStorage.getItem('theme')
+          const initialTheme =
+            storedTheme === 'light' || storedTheme === 'dark'
+              ? storedTheme
+              : 'dark'
 
-					document.documentElement.classList.toggle('dark', initialTheme === 'dark')
-					localStorage.setItem('theme', initialTheme)
-				}
+          document.documentElement.classList.toggle(
+            'dark',
+            initialTheme === 'dark',
+          )
+          localStorage.setItem('theme', initialTheme)
+        }
 
-				if (!window.__themeSyncBound) {
-					window.__themeSyncBound = true
-					document.addEventListener('astro:before-preparation', applyTheme)
-					document.addEventListener('astro:after-swap', applyTheme)
-					document.addEventListener('astro:page-load', applyTheme)
-				}
+        if (!window.__themeSyncBound) {
+          window.__themeSyncBound = true
+          document.addEventListener('astro:before-preparation', applyTheme)
+          document.addEventListener('astro:after-swap', applyTheme)
+          document.addEventListener('astro:page-load', applyTheme)
+        }
 
-				applyTheme()
-			})()
-		</script>
-	</head>
-	<body class={bodyClass}>
-		<Nav />
-		<main class={mainClass}>
-			<slot />
-		</main>
-		{!hideFooter && <Footer />}
-	</body>
+        applyTheme()
+      })()
+    </script>
+  </head>
+  <body class={bodyClass}>
+    <Nav />
+    <main class={mainClass}>
+      <slot />
+    </main>
+    {!hideFooter && <Footer />}
+  </body>
 </html>

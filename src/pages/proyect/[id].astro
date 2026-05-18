@@ -16,7 +16,8 @@ export const getStaticPaths = async () => {
 const { proyect } = Astro.props
 const { data } = proyect
 const { title, img, imgSize, styleBody, url } = data
-const padNotesLightThemeHook = proyect.id === '1_proyect' ? 'project-theme-padnotes' : ''
+const padNotesLightThemeHook =
+  proyect.id === '1_proyect' ? 'project-theme-padnotes' : ''
 
 const { Content } = await render(proyect)
 ---
@@ -45,7 +46,7 @@ const { Content } = await render(proyect)
       />
     </a>
   </div>
-  <div class="prose prose-invert mx-auto w-full max-w-none">
+  <div class="prose dark:prose-invert mx-auto w-full max-w-none">
     <Content />
   </div>
 </Layout>

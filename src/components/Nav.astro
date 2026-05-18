@@ -2,27 +2,27 @@
 import ThemeToggle from './ThemeToggle.astro'
 
 const styles = {
- 	li: 'hover:scale-110 cursor-pointer hover:text-[var(--color-accent)] hover:duration-200 hover:ease-in-out',
- 	a: 'border-b-white border-solid hover:border-b-2 text-[var(--color-text)] text-sm md:text-base',
- }
+  li: 'hover:scale-110 cursor-pointer hover:text-[var(--color-accent)] hover:duration-200 hover:ease-in-out',
+  a: 'border-b-white border-solid hover:border-b-2 text-[var(--color-text)] text-sm md:text-base',
+}
 ---
 
 <nav
-	class='sticky top-0 z-10 mx-auto flex min-h-12 w-full flex-row justify-between px-4 backdrop-blur-md dark:bg-black/30 md:scroll-pt-20'
+  class="sticky top-0 z-10 mx-auto flex min-h-12 w-full flex-row justify-between px-4 backdrop-blur-md md:scroll-pt-20 dark:bg-black/30"
 >
-	<ul class='mx-0 my-0 flex items-center gap-4 self-center md:mx-8'>
-		<li class={styles.li}>
-			<a class={styles.a} href='/#inicio'> Inicio </a>
-		</li>
-		<li class={styles.li}>
-			<a class={styles.a} href='/#technologies'> Tecnologías </a>
-		</li>
-		<li class={styles.li}>
-			<a class={styles.a} href='/#proyects'> Proyectos </a>
-		</li>
-		<li class={styles.li}>
-			<a class={styles.a} href='/#aboutme'> Sobre Mi </a>
-		</li>
-	</ul>
-	<ThemeToggle class={'cursor-pointer'}/>
+  <ul class="mx-0 my-0 flex items-center gap-4 self-center md:mx-8">
+    <li class={styles.li}>
+      <a class={styles.a} href="/#inicio"> Inicio </a>
+    </li>
+    <li class={styles.li}>
+      <a class={styles.a} href="/#technologies"> Tecnologías </a>
+    </li>
+    <li class={styles.li}>
+      <a class={styles.a} href="/#proyects"> Proyectos </a>
+    </li>
+    <li class={styles.li}>
+      <a class={styles.a} href="/#aboutme"> Sobre Mi </a>
+    </li>
+  </ul>
+  <ThemeToggle class={'cursor-pointer'} />
 </nav>
