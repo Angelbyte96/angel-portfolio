@@ -16,3 +16,16 @@ body.body-proyect-1::-webkit-scrollbar-track {
   background-color: #150828;
   border: #150828 0.1rem solid;
 }
+
+html:not(.dark) body.project-theme-padnotes {
+  --color-accent: #0e7f4f;
+  --color-highlight: #2a503d;
+}
+
+html:not(.dark) body.project-theme-padnotes .prose a {
+  color: #0d6b43;
+}
+
+html:not(.dark) body.project-theme-padnotes .prose a:hover {
+  color: #0a5335;
+}
