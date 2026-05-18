@@ -3,6 +3,79 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ============================================
+   THEME SYSTEM — Obsidian/Light
+   ============================================ */
+:root {
+  /* Backgrounds */
+  --color-bg: #ffffff;
+  --color-bg-elevated: #f5f5f5;
+  --color-bg-card: #fafafa;
+  
+  /* Text */
+  --color-text: #171717;
+  --color-text-muted: #525252;
+  
+  /* Borders */
+  --color-border: #e5e5e5;
+  --color-border-subtle: #d4d4d4;
+  
+  /* Accent */
+  --color-accent: #2cc9ff;
+  
+  /* Background Glow Effect (Astro Style) */
+  --glow-color-1: rgba(56, 189, 248, 0.15); /* Light Blue */
+  --glow-color-2: rgba(59, 130, 246, 0.1);  /* Deeper Blue */
+  --glow-color-3: rgba(147, 197, 253, 0.05); /* Very light blue edge */
+  
+  /* Scrollbar */
+  --scrollbar-thumb: #d4d4d4;
+  --scrollbar-thumb-active: #a3a3a3;
+  
+  /* Selection */
+  --selection-bg: #404040;
+  --selection-text: #ffffff;
+}
+
+.dark {
+  /* Backgrounds */
+  --color-bg: #13151a; /* Astro's slightly lighter dark theme color */
+  --color-bg-elevated: #1f2128;
+  --color-bg-card: #191b22;
+  
+  /* Text */
+  --color-text: #e5e5e5;
+  --color-text-muted: #a3a3a3;
+  
+  /* Borders */
+  --color-border: #262626;
+  --color-border-subtle: #404040;
+  
+  /* Accent stays the same — it's already good */
+  
+  /* Background Glow Effect (Astro Style) */
+  --glow-color-1: rgba(168, 85, 247, 0.15); /* Astro Purple */
+  --glow-color-2: rgba(217, 70, 239, 0.1);  /* Astro Fuchsia/Lilac */
+  --glow-color-3: rgba(192, 132, 252, 0.05); /* Very light purple edge */
+  
+  /* Scrollbar */
+  --scrollbar-thumb: #3f3f3f;
+  --scrollbar-thumb-active: #525252;
+  
+  /* Selection */
+  --selection-bg: #525252;
+  --selection-text: #ffffff;
+  
+  /* Glow accent for cards - matches the Astro ambient glow (Purple) */
+  --glow-accent: rgba(168, 85, 247, 0.4);
+}
+
+/* Light mode glow accent */
+:root {
+  /* Glow accent for cards - matches the Astro ambient glow (Blue) */
+  --glow-accent: rgba(56, 189, 248, 0.4);
+}
+
 @theme {
   /* Custom breakpoints (antes en theme.extend.screens) */
   --breakpoint-xs: 374px;
@@ -75,26 +148,36 @@ html {
 }
 
 body {
-  background-color: #330033;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23505'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body::-webkit-scrollbar {
-  width: 0.6rem;
+/* Astro-style Ambient Glow Pattern */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-color: transparent;
+  background-image: 
+    /* Core bright spot */
+    radial-gradient(circle at 50% 0%, var(--glow-color-1) 0%, transparent 35%),
+    /* Wider ambient glow */
+    radial-gradient(ellipse 80% 50% at 50% -10%, var(--glow-color-2) 0%, transparent 60%),
+    /* Extremely subtle edge glow */
+    radial-gradient(circle at 50% 10%, var(--glow-color-3) 0%, transparent 80%);
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease;
+  /* Optional: Adds a very subtle noise texture to prevent gradient banding */
+  filter: contrast(1.1) brightness(1.1);
 }
 
-body::-webkit-scrollbar-thumb {
-  background-color: #7f007f;
-  border-radius: 0.5rem;
-}
-
-body::-webkit-scrollbar-thumb:hover {
-  background-color: #490149;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: #150828;
-  border: #150828 0.1rem solid;
+::selection {
+  background-color: var(--selection-bg);
+  color: var(--selection-text);
 }
 
 /* Custom typography (prose) styles ported from tailwind.config.mjs */
@@ -119,22 +202,23 @@ body::-webkit-scrollbar-track {
   }
 
   .prose-invert {
-    color: var(--color-gray-200);
+    color: var(--color-text);
   }
   .prose-invert a {
-    color: var(--color-blue-300);
+    color: var(--color-accent);
   }
   .prose-invert a:hover {
-    color: var(--color-blue-400);
+    color: var(--color-accent);
+    filter: brightness(1.2);
   }
   .prose-invert ol > li::before {
-    color: var(--color-gray-400);
+    color: var(--color-text-muted);
   }
   .prose-invert ul > li::before {
-    background-color: var(--color-gray-500);
+    background-color: var(--color-text-muted);
   }
   .prose-invert ul > li::marker,
   .prose-invert ol > li::marker {
-    color: var(--color-white);
+    color: var(--color-text);
   }
 }

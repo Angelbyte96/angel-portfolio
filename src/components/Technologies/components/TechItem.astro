@@ -10,7 +10,7 @@ const { name, icon, class: className, ...rest } = Astro.props
 ---
 
 <li
-  class:list={['flex flex-col items-center justify-center gap-1', className]}
+  class:list={['flex flex-col items-center justify-center gap-1 text-[var(--color-text)]', className]}
   {...rest}
 >
   <svg width="50" height="50">
