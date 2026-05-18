@@ -3,96 +3,92 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ============================================
-   THEME SYSTEM — Obsidian/Light
-   ============================================ */
 :root {
-  /* Backgrounds - Off-white for contrast with white cards */
+  /* Fondos - Off-white para contraste con cards blancas */
   --color-bg: #f8fafc;
   --color-bg-elevated: #f1f5f9;
   --color-bg-card: #ffffff;
-  
-  /* Text */
+
+  /* Texto */
   --color-text: #171717;
   --color-text-muted: #525252;
-  
-  /* Borders - Darker for better definition */
+
+  /* Bordes - Más oscuros para mejor definición */
   --color-border: #cbd5e1;
   --color-border-subtle: #94a3b8;
-  
-  /* Accent colors with good contrast on white */
-  --color-highlight: #d97706; /* amber-600 - excellent on white */
-  --color-accent: #0284c7;    /* cyan-700 - excellent on white */
-  
-  /* Background Glow Effect (Light Mode - more intensity) */
-  --glow-color-1: rgba(168, 85, 247, 0.35); /* Subtle lilac core */
-  --glow-color-2: rgba(56, 189, 248, 0.45);  /* Spread cyan/blue */
-  --glow-color-3: rgba(147, 197, 253, 0.35); /* Very light blue edge */
-  
-  /* Card shadow - soft drop shadow for light mode */
-  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  
+
+  /* Acentos de texto para light mode */
+  --color-highlight: #db2777; /* fucsia vivo */
+  --color-accent: #0055ff;    /* azul eléctrico */
+
+  /* Efecto glow del fondo (estilo Astro) */
+  --glow-color-1: rgba(168, 85, 247, 0.35); /* núcleo lila sutil */
+  --glow-color-2: rgba(56, 189, 248, 0.45); /* expansión cyan/blue */
+  --glow-color-3: rgba(147, 197, 253, 0.35); /* borde azul muy sutil */
+
+  /* Sombra de cards - suave para light mode */
+  --card-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 2px 4px -1px rgba(0, 0, 0, 0.03);
+
   /* Scrollbar */
   --scrollbar-thumb: #cbd5e1;
   --scrollbar-thumb-active: #94a3b8;
-  
-  /* Selection */
+
+  /* Selección */
   --selection-bg: #404040;
   --selection-text: #ffffff;
+
+  /* Glow de cards para light mode (azul eléctrico) */
+  --glow-accent: rgba(0, 85, 255, 0.35);
 }
 
 .dark {
-  /* Backgrounds */
-  --color-bg: #13151a; /* Astro's slightly lighter dark theme color */
+  /* Fondos */
+  --color-bg: #13151a;
   --color-bg-elevated: #1f2128;
   --color-bg-card: #191b22;
-  
-  /* Text */
+
+  /* Texto */
   --color-text: #e5e5e5;
   --color-text-muted: #a3a3a3;
-  
-  /* Borders */
+
+  /* Bordes */
   --color-border: #262626;
   --color-border-subtle: #404040;
-  
-  /* Accent - highlight and accent for dark mode */
-  --color-highlight: #fde047; /* yellow-300 */
-  --color-accent: #2cc9ff;   /* cyan-400 */
-  
-  /* Background Glow Effect (Astro Style) */
+
+  /* Acentos para dark mode */
+  --color-highlight: #fde047; /* amarillo neón */
+  --color-accent: #2cc9ff;    /* cyan eléctrico */
+
+  /* Efecto glow del fondo (estilo Astro) */
   --glow-color-1: rgba(168, 85, 247, 0.25);
   --glow-color-2: rgba(217, 70, 239, 0.18);
   --glow-color-3: rgba(192, 132, 252, 0.12);
-  
-  /* Card shadow - darker, more pronounced in dark mode */
+
+  /* Sombra de cards - más pronunciada en dark mode */
   --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-  
+
   /* Scrollbar */
   --scrollbar-thumb: #3f3f3f;
   --scrollbar-thumb-active: #525252;
-  
-  /* Selection */
+
+  /* Selección */
   --selection-bg: #525252;
   --selection-text: #ffffff;
-  
-  /* Glow accent for cards - matches the Astro ambient glow (Purple) */
+
+  /* Glow de cards para dark mode (lila Astro) */
   --glow-accent: rgba(168, 85, 247, 0.4);
 }
 
-/* Light mode glow accent */
-:root {
-  /* Glow accent for cards - matches the Astro ambient glow (Blue) */
-  --glow-accent: rgba(56, 189, 248, 0.35);
-}
-
 @theme {
-  /* Custom breakpoints (antes en theme.extend.screens) */
+  /* Breakpoints personalizados */
   --breakpoint-xs: 374px;
 
-  /* Custom fonts (antes en theme.extend.fontFamily) */
+  /* Fonts personalizadas */
   --font-monda: 'monda-400', sans-serif;
 
-  /* Custom gradients (antes en theme.extend.backgroundImage) */
+  /* Gradientes personalizados */
   --background-image-custom-gradient: linear-gradient(
     to right top,
     #0e031b,
@@ -121,14 +117,6 @@
   );
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   *,
   ::after,
@@ -159,10 +147,12 @@ html {
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
-/* Astro-style Ambient Glow Pattern */
+/* Pattern de glow ambiental (estilo Astro) */
 body::before {
   content: '';
   position: fixed;
@@ -170,17 +160,13 @@ body::before {
   pointer-events: none;
   z-index: -1;
   background-color: transparent;
-  background-image: 
-    /* Core bright spot */
+  background-image:
     radial-gradient(circle at 50% 0%, var(--glow-color-1) 0%, transparent 35%),
-    /* Wider ambient glow */
     radial-gradient(ellipse 80% 50% at 50% -10%, var(--glow-color-2) 0%, transparent 60%),
-    /* Extremely subtle edge glow */
     radial-gradient(circle at 50% 10%, var(--glow-color-3) 0%, transparent 80%);
   background-size: 100vw 100vh;
   background-repeat: no-repeat;
   transition: background-image 0.5s ease;
-  /* Optional: Adds a very subtle noise texture to prevent gradient banding */
   filter: contrast(1.1) brightness(1.1);
 }
 
@@ -189,7 +175,7 @@ body::before {
   color: var(--selection-text);
 }
 
-/* Custom typography (prose) styles ported from tailwind.config.mjs */
+/* Estilos de tipografía para prose */
 @layer components {
   .prose {
     color: var(--color-gray-900);
