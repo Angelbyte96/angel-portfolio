@@ -2,7 +2,7 @@
 import { Moon, Sun } from '@lucide/astro'
 import type { HTMLAttributes } from 'astro/types'
 
-interface Props extends HTMLAttributes<'button'> {}
+type Props = HTMLAttributes<'button'>
 
 const { class: className, ...rest } = Astro.props
 ---
