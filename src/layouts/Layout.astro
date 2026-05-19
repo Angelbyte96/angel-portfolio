@@ -58,23 +58,6 @@ const {
         applyTheme()
       })()
     </script>
-    <script is:inline>
-      ;(() => {
-        const forceRepaint = () => {
-          document.body.style.transform = 'translateZ(0)'
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              document.body.style.transform = ''
-            })
-          })
-        }
-
-        if (!window.__repaintBound) {
-          window.__repaintBound = true
-          document.addEventListener('astro:after-swap', forceRepaint)
-        }
-      })()
-    </script>
   </head>
   <body class={bodyClass}>
     <Nav />
