@@ -31,9 +31,7 @@ const { frontEnd, backEnd, learning, tools } = technologiesList
   </p>
   <div
     class="grid gap-1 md:w-full md:grid-cols-2"
-    style={{
-      boxShadow: '0 0 100px -45px var(--glow-accent)',
-    }}
+    style={{ boxShadow: '0 0 100px -45px var(--glow-accent)' }}
   >
     <TechArticle title="FrontEnd">
       {frontEnd.map(item => <TechItem icon={item.icon} name={item.name} />)}
