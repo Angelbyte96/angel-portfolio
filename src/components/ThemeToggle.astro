@@ -7,11 +7,17 @@ type Props = HTMLAttributes<'button'>
 const { class: className, ...rest } = Astro.props
 ---
 
-<button id="theme-toggle" class:list={['', className]} {...rest}>
-  <span class="hidden dark:block">
+<button
+  id="theme-toggle"
+  type="button"
+  aria-label="Cambiar tema"
+  class:list={['', className]}
+  {...rest}
+>
+  <span class="hidden dark:block" aria-hidden="true">
     <Sun />
   </span>
-  <span class="block dark:hidden">
+  <span class="block dark:hidden" aria-hidden="true">
     <Moon />
   </span>
 </button>
