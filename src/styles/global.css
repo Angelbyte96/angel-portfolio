@@ -18,8 +18,8 @@
   --color-border-subtle: #94a3b8;
 
   /* Acentos de texto para light mode */
-  --color-highlight: #be123c; /* fucsia vivo */
-  --color-accent: #047857; /* azul eléctrico */
+  --color-highlight: #7c3aed; /* violeta fuerte */
+  --color-accent: #0f766e;    /* teal profundo */
 
   /* Efecto glow del fondo (estilo Astro) */
   --glow-color-1: rgba(168, 85, 247, 0.35); /* núcleo lila sutil */
