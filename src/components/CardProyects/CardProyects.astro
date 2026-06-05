@@ -1,7 +1,7 @@
 ---
 const { title, img, tags, slug, description, imgSize, url, github } = Astro.props
 import GithubIcon from '@components/CardProyects/GithubIcon.astro'
-import { isTagKey, stylesTags } from '@components/CardProyects/mocks/stylesTags'
+import TechTag from '@components/CardProyects/components/TechTag.astro'
 import { ArrowUpRight } from '@lucide/astro'
 ---
 
@@ -52,12 +52,6 @@ import { ArrowUpRight } from '@lucide/astro'
     {description}
   </p>
   <ul class="mt-auto flex w-fit flex-wrap gap-2 self-start text-start">
-    {
-      tags.map((tag: string) => {
-        const key = tag.toLowerCase()
-        const style = isTagKey(key) ? stylesTags[key] : stylesTags.li
-        return <li class={style}>{tag}</li>
-      })
-    }
+    {tags.map((tag: string) => <TechTag tag={tag} />)}
   </ul>
 </article>

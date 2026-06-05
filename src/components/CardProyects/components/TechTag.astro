@@ -1,0 +1,28 @@
+---
+import { resolveTag } from '../mocks/techRegistry'
+
+interface Props {
+  tag: string
+}
+
+const { tag } = Astro.props
+const meta = resolveTag(tag)
+---
+
+<li
+  class="flex items-center gap-1.5 rounded-full border border-(--color-border-subtle) bg-(--color-bg-elevated) px-2.5 py-1 text-xs text-(--color-text) whitespace-nowrap"
+>
+  {
+    meta && (
+      <svg
+        width="16"
+        height="16"
+        aria-hidden="true"
+        class:list={[{ 'dark:invert': meta.monochrome }]}
+      >
+        <use href={`/icons.svg#${meta.id}`} />
+      </svg>
+    )
+  }
+  <span>{tag}</span>
+</li>
