@@ -1,6 +1,6 @@
 ---
 title: SpendList
-description: Una aplicación web moderna para crear y gestionar listas de compras con control de gastos en tiempo real. ¡Organiza tus compras y controla tu presupuesto de forma inteligente!
+description: Aplicación web para crear y gestionar listas de compras con cálculo automático de gastos en tiempo real.
 img: https://res.cloudinary.com/ddinz4ewu/image/upload/v1757182123/Recursos/SpendList/HomeDescrip_owsnkv.webp
 tags: [Astro, React, TypeScript, Tailwind]
 imgSize: '695/400'
@@ -10,49 +10,67 @@ url: https://spend-list-rouge.vercel.app/
 
 # SpendList
 
-¡Bienvenido a SpendList, una app web para gestionar listas de compras y controlar gastos!
+Aplicación web para gestionar listas de compras con control de gastos en tiempo real.
 
-## Descripción
+## ¿Qué resuelve?
 
-SpendList es una aplicación web inteligente y moderna concebida para transformar la manera en la que haces tus compras. Con un enfoque especial en el monitoreo y control de gastos en tiempo real, permite a los usuarios organizarse eficazmente calculando automáticamente el costo total y ofreciendo un desglose pormenorizado por artículo. La plataforma fue diseñada con dos modos de almacenamiento flexibles: un modo "demo" funcional basado en `localStorage` para pruebas ágiles y sin registro. Actualmente, se encuentra en desarrollo activo su integración nativa con Astro DB y Turso (SQLite) para brindar una persistencia completa en la nube. Adicionalmente, cuenta con un diseño fluido, modo oscuro integrado y una interfaz pensada particularmente para brindar la mejor experiencia en dispositivos móviles y de escritorio.
+Planificar compras sin perder el hilo del presupuesto. SpendList calcula automáticamente el total a medida que agregás artículos, registra fechas, distingue entre ítems comprados y pendientes, y funciona sin necesidad de cuenta gracias al modo demo con `localStorage`.
 
-## Tecnologías Utilizadas
+## Stack
 
-SpendList está desarrollado con un stack técnico ágil y robusto para asegurar máximo rendimiento:
+| Capa | Tecnología |
+|------|-----------|
+| Framework | Astro 6 + React 19 |
+| Lenguaje | TypeScript |
+| Estilos | Tailwind CSS v4 |
+| Componentes | Radix UI (Dialog, Select) + Lucide React |
+| Base de datos | Astro DB + Turso (SQLite) |
+| Auth | Clerk *(en desarrollo)* |
+| Deploy | Vercel + Vercel Analytics |
+| Notificaciones | @pheralb/toast |
+| Fechas | @formkit/tempo |
 
-- **Astro y React**: La combinación ideal para construir una interfaz interactiva ultrarrápida aprovechando el renderizado híbrido.
-- **TypeScript**: Garantiza la fiabilidad del código mediante tipado estático estricto.
-- **Tailwind CSS**: Posibilita un diseño adaptable, moderno e implementable de manera rápida.
-- **Radix UI y Lucide Icons**: Proveen componentes accesibles de alta calidad (como diálogos y selectores) y una iconografía uniforme y estilizada.
-- **Turso (SQLite) y Astro DB**: Infraestructura de base de datos eficiente y rápida manejada desde el edge para almacenamiento persistente.
-- **Vercel**: Empleado para el despliegue automático y hosting continuo de la aplicación.
+## Funcionalidades
 
-## Funcionalidades Clave
+**Gestión de listas**
+- Crear, editar y eliminar listas con nombre personalizado
+- Registro automático de fecha de creación y última modificación
 
-Las características principales que hacen de SpendList una herramienta indispensable incluyen:
+**Artículos**
+- Agregar ítems con nombre, precio y cantidad
+- Marcar artículos como comprados o pendientes
+- Eliminación individual o limpieza completa
 
-1. **Gestión Inteligente y Ágil de Listas**
-   - Creación, modificación y eliminación rápida de listas de compra.
-   - Organización adaptada a las necesidades diarias de categorización y prioridad.
+**Control de gastos**
+- Total calculado en tiempo real al modificar cualquier ítem
+- Estadísticas de cantidad de artículos y monto acumulado
 
-2. **Control Financiero en Tiempo Real**
-   - El sistema calcula de inmediato el precio total de tu lista desglosándolo por artículo introducido.
-   - Acceso a estadísticas y gráficos visuales sobre cantidades e importes acumulados.
-   - Permite monitorear tu presupuesto planificado contra tu gasto actual de forma sencilla.
+**Modos de almacenamiento**
+- **Demo** — `localStorage`, sin registro, disponible ahora
+- **Persistente** — Astro DB + Turso, requiere cuenta *(en desarrollo)*
 
-3. **Administración Detallada de Artículos**
-   - Añade artículos especificando cantidades, precios y notas aclaratorias.
-   - Controla fácilmente cuáles ítems han sido adquiridos ("comprados") y cuáles siguen pendientes.
+## Rutas
 
-4. **Experiencia de Usuario de Primer Nivel**
-   - UI muy limpia, con modo oscuro y modo claro accesibles con un solo clic.
-   - Diseño full responsivo adaptado cuidadosamente a las tareas on-the-go en el celular.
+```
+/                    → Página de inicio
+/demo                → App principal (modo demo)
+/demo/nueva-lista    → Crear nueva lista
+/demo/mis-listas     → Ver todas las listas
+/demo/editar/[id]    → Editar lista existente
+/auth                → Autenticación (en desarrollo)
+```
 
-5. **Formatos de Almacenamiento Adaptables**
-   - Modalidad **Demo (Activa)** que recurre al almacenamiento local (localStorage) para facilitar un acceso instantáneo, rápido y sin registros.
-   - Modalidad **Permanente (En desarrollo)** con Turso, planeada para resguardar de manera segura la información en la nube y sincronizar datos.
+## API
 
-## Capturas de Pantalla
+```
+GET    /api/list     → Obtener listas
+POST   /api/finalize → Crear lista
+PATCH  /api/list     → Actualizar lista
+DELETE /api/list     → Eliminar lista
+POST   /api/items    → Gestionar artículos
+```
+
+## Capturas
 
 ### Página Principal
 
@@ -66,14 +84,6 @@ Las características principales que hacen de SpendList una herramienta indispen
 
 ![Mis Listas](https://res.cloudinary.com/ddinz4ewu/image/upload/v1757172175/Recursos/SpendList/MisListas_zbqief.webp)
 
-## Estado del Proyecto
+## Estado
 
-SpendList se mantiene en una evolución constante, priorizando siempre el rendimiento y la facilidad de uso. Las capacidades críticas como la gestión financiera en tiempo real, el almacenamiento demo y el diseño responsivo ya operan a la perfección. Mi enfoque principal en el roadmap actual es concluir e implementar definitivamente la integración con **Turso DB** para lograr la persistencia de datos general, para así luego abordar la exportación portátil de listas.
-
-## Comentarios
-
-Si se te ocurre alguna forma en la que SpendList podría resolver mejor tus problemas a la hora de comprar, ¡estoy encantado de escucharte! Tu retroalimentación permite que esta herramienta evolucione de manera útil para facilitar tu cotidianidad.
-
----
-
-_Este es el espacio de SpendList, una aplicación construida con enfoque y pasión para hacer que tus compras diarias sean planificadas y sin estrés. ¡Gracias por usarla y no te pierdas mis siguientes actualizaciones!_
+El modo demo está completamente funcional. El trabajo en curso está enfocado en completar la integración con **Turso DB** para persistencia en la nube y en conectar **Clerk** para autenticación de usuarios.

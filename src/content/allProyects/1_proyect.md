@@ -2,7 +2,7 @@
 title: Pad Notes
 description: Una aplicación web edge-first para crear y gestionar notas personales, construida con Astro SSR, islands architecture y base de datos globalmente replicada. ¡Captura y organiza tus ideas al instante desde cualquier dispositivo!
 img: https://res.cloudinary.com/ddinz4ewu/image/upload/v1746399001/Recursos/PadNotes/Home.png
-tags: [Astro, React, TypeScript, TailwindCSS, Turso, Clerk, Upstash, Drizzle ORM]
+tags: [Astro, React, TypeScript, Tailwind, Turso, Clerk, Upstash, Drizzle ORM]
 imgSize: '695/400'
 styleBody: flex flex-col items-center min-h-screen bg-scroll md:bg-fixed font-monda body-proyect-1
 url: https://padnotes.angelbyte.dev/
