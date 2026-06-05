@@ -6,7 +6,7 @@ tags: [Astro, React, TypeScript, Tailwind]
 imgSize: '695/400'
 styleBody: flex flex-col items-center min-h-screen bg-scroll md:bg-fixed font-monda body-proyect-2
 url: https://spend-list-rouge.vercel.app/
-github: https://github.com/angelbyte/spendlist
+github: https://github.com/Angelbyte96/SpendList
 ---
 
 # SpendList

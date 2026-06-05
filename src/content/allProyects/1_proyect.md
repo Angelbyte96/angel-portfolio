@@ -6,7 +6,7 @@ tags: [Astro, React, TypeScript, Tailwind, Turso, Clerk, Upstash, Drizzle ORM]
 imgSize: '695/400'
 styleBody: flex flex-col items-center min-h-screen bg-scroll md:bg-fixed font-monda body-proyect-1
 url: https://padnotes.angelbyte.dev/
-github: https://github.com/angelbyte/padnotes
+github: https://github.com/Angelbyte96/Pad-Notes
 ---
 
 # Pad Notes
