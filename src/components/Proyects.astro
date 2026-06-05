@@ -26,7 +26,7 @@ const allProyects = await getCollection('allProyects')
     {
       allProyects.map(async proyect => {
         const { data, id } = proyect
-        const { title, img, tags, description, imgSize, url } = data
+        const { title, img, tags, description, imgSize, url, github } = data
 
         return (
           <CardProyects
@@ -37,6 +37,7 @@ const allProyects = await getCollection('allProyects')
             description={description}
             imgSize={imgSize}
             url={url}
+            github={github}
           />
         )
       })

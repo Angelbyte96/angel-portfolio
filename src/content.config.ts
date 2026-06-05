@@ -12,6 +12,7 @@ const allProyects = defineCollection({
     imgSize: z.string(),
     styleBody: z.string(),
     url: z.string(),
+    github: z.string().optional(),
   }),
 })
 

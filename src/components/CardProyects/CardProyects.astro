@@ -1,12 +1,24 @@
 ---
-const { title, img, tags, slug, description, imgSize, url } = Astro.props
+const { title, img, tags, slug, description, imgSize, url, github } = Astro.props
+import GithubIcon from '@components/CardProyects/GithubIcon.astro'
 import { isTagKey, stylesTags } from '@components/CardProyects/mocks/stylesTags'
 import { ArrowUpRight } from '@lucide/astro'
 ---
 
 <article
-  class="flex w-fit flex-col items-center gap-2 rounded-2xl border border-(--color-border) bg-(--color-bg-card) px-2 py-4 shadow-(--card-shadow) backdrop-blur-lg transform-gpu"
+  class="relative flex w-fit flex-col items-center gap-2 rounded-2xl border border-(--color-border) bg-(--color-bg-card) px-2 py-4 shadow-(--card-shadow) backdrop-blur-lg transform-gpu"
 >
+  {github && (
+    <a
+      href={github}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="GitHub repository"
+      class="absolute top-2 right-2 z-10 rounded-lg p-1.5 text-(--color-text-muted) transition hover:scale-110 hover:text-(--color-accent)"
+    >
+      <GithubIcon class="w-5 h-5" />
+    </a>
+  )}
   <a
     href={`/proyect/${slug}/`}
     class="mb-2 transition hover:scale-[1.02] xl:mb-0"

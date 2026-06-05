@@ -3,6 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import '@/styles/scrollbarProyects.css'
 import { getCollection, render } from 'astro:content'
 import { Link } from '@lucide/astro'
+import GithubIcon from '@components/CardProyects/GithubIcon.astro'
 
 export const getStaticPaths = async () => {
   const allProyects = await getCollection('allProyects')
@@ -15,7 +16,7 @@ export const getStaticPaths = async () => {
 
 const { proyect } = Astro.props
 const { data } = proyect
-const { title, img, imgSize, styleBody, url } = data
+const { title, img, imgSize, styleBody, url, github } = data
 const padNotesLightThemeHook =
   proyect.id === '1_proyect' ? 'project-theme-padnotes' : ''
 
@@ -45,6 +46,17 @@ const { Content } = await render(proyect)
         class="absolute top-2 right-2 h-5 w-5 cursor-pointer text-gray-500 group-hover:text-gray-700 md:h-10 md:w-10"
       />
     </a>
+    {github && (
+      <a
+        href={github}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub repository"
+        class="absolute top-2 left-2 rounded-lg p-1.5 text-gray-500 transition hover:scale-110 hover:text-gray-700"
+      >
+        <GithubIcon class="h-5 w-5 md:h-10 md:w-10" />
+      </a>
+    )}
   </div>
   <div class="prose dark:prose-invert mx-auto w-full max-w-none">
     <Content />
