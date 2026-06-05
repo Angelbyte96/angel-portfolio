@@ -215,3 +215,18 @@ body::before {
     color: var(--color-text);
   }
 }
+
+@layer utilities {
+  .prose :not(pre) > code::before,
+  .prose :not(pre) > code::after {
+    content: none;
+  }
+  .prose :not(pre) > code {
+    background-color: var(--color-bg-elevated);
+    color: var(--color-text);
+    padding: 0.15em 0.35em;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    font-weight: 500;
+  }
+}
