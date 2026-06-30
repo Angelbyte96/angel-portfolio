@@ -1,0 +1,41 @@
+---
+import { actions } from 'astro:actions'
+---
+
+<form
+	method='post'
+	action={actions.contact}
+	class='my-4 flex flex-col gap-2 p-1 text-white ring'>
+	<section class='flex justify-between gap-4'>
+		<div class='flex flex-1 flex-col gap-1'>
+			<label for='name'>Nombre</label>
+			<input id='name' type='text' name='name' class='rounded-md ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)' />
+		</div>
+		<div class='flex flex-1 flex-col gap-1'>
+			<label for='email'>Correo</label>
+			<input id='email' type='email' name='email' class='rounded-md ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)' />
+		</div>
+	</section>
+	<div class='flex flex-col gap-1'>
+		<label for='subject'>Asunto</label>
+		<input
+			id='subject'
+			type='text'
+			name='subject'
+			class='flex-1 rounded-md ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)'
+		/>
+	</div>
+	<div class='flex flex-col gap-1'>
+		<label for='message'>Mensaje</label>
+		<textarea
+			id='message'
+			name='message'
+			class='rounded-md ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)'></textarea>
+	</div>
+	<div class='mt-4 flex justify-center'>
+		<button
+			class='cursor-pointer rounded-md border-none bg-(--color-accent)/50 px-4 py-2 ring-1 ring-(--color-accent) hover:bg-(--color-accent)/80'
+			>Enviar</button
+		>
+	</div>
+</form>

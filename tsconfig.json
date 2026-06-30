@@ -9,5 +9,5 @@
       "@components/*": ["src/components/*"]
     }
   },
-  "include": ["src/**/*", "./worker-configuration.d.ts"]
+  "include": ["src/**/*", "./worker-configuration.d.ts", ".astro/types.d.ts"]
 }
