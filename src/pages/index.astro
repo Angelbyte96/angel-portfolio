@@ -5,15 +5,12 @@ import Presentation from '@/components/Presentation.astro'
 import Proyects from '@/components/Proyects.astro'
 import Technologies from '@/components/Technologies/Technologies.astro'
 import Layout from '@/layouts/Layout.astro'
-import { actions } from 'astro:actions'
-
-const result = Astro.getActionResult(actions.contact)
 ---
 
-<Layout title="Angel Guzmán | Desarrollador Web">
-  <Presentation />
-  <Technologies />
-  <Proyects />
-  <AboutMe />
-  <ContactForm />
+<Layout title='Angel Guzmán | Desarrollador Web'>
+	<Presentation />
+	<Technologies />
+	<Proyects />
+	<AboutMe />
+	<ContactForm />
 </Layout>
