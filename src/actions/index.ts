@@ -9,10 +9,26 @@ export const server = {
   contact: defineAction({
     accept: 'form',
     input: z.object({
-      name: z.string().min(3).max(45),
-      email: z.email().min(3).max(30),
-      subject: z.string().min(3).max(30),
-      message: z.string().min(3).max(150),
+      name: z
+        .string({ error: 'El nombre es obligatorio' })
+        .min(3, { error: 'Debe tener al menos 3 caracteres' })
+        .max(45, { error: 'No puede superar los 45 caracteres' }),
+      email: z
+        .email({
+          error: iss =>
+            iss.code === 'invalid_type'
+              ? 'El correo es obligatorio'
+              : 'El formato del correo es inválido',
+        })
+        .max(30, { error: 'No puede superar los 30 caracteres' }),
+      subject: z
+        .string({ error: 'El asunto es obligatorio' })
+        .min(3, { error: 'Debe tener al menos 3 caracteres' })
+        .max(30, { error: 'No puede superar los 30 caracteres' }),
+      message: z
+        .string({ error: 'El mensaje es obligatorio' })
+        .min(3, { error: 'Debe tener al menos 3 caracteres' })
+        .max(150, { error: 'No puede superar los 150 caracteres' }),
     }),
     handler: async ({ name, email, subject, message }) => {
       const { error } = await resend.emails.send({

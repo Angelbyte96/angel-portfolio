@@ -1,14 +1,10 @@
 ---
-import { actions, isInputError } from 'astro:actions'
 
-const result = Astro.getActionResult(actions.contact)
-const inputError = isInputError(result?.error) ? result.error.fields : {}
 ---
 
 <form
-	method='post'
-	action={actions.contact}
-	class='my-4 flex flex-col gap-2 p-1 text-white ring'>
+	novalidate
+	class='my-4 flex flex-col gap-2 rounded-2xl bg-(--color-bg-card) p-1 px-2 py-4 text-white shadow-(--card-shadow) ring-1 ring-(--color-border) backdrop-blur-lg dark:ring-(--color-border)'>
 	<section class='flex justify-between gap-4'>
 		<div class='flex flex-1 flex-col gap-1'>
 			<label for='name'>Nombre</label>
@@ -16,8 +12,10 @@ const inputError = isInputError(result?.error) ? result.error.fields : {}
 				id='name'
 				type='text'
 				name='name'
-				class='rounded-md ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)'
+				class='rounded-md p-0.5 ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)'
+				aria-describedby='error-name'
 			/>
+			<p id='error-name' class='hidden text-sm text-red-700'></p>
 		</div>
 		<div class='flex flex-1 flex-col gap-1'>
 			<label for='email'>Correo</label>
@@ -25,10 +23,10 @@ const inputError = isInputError(result?.error) ? result.error.fields : {}
 				id='email'
 				type='email'
 				name='email'
-				class='rounded-md ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)'
+				class='rounded-md p-0.5 ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)'
 				aria-describedby='error-email'
 			/>
-			{inputError.email && <p id='error-email'>{inputError.email.join(',')}</p>}
+			<p id='error-email' class='hidden text-sm text-red-700'></p>
 		</div>
 	</section>
 	<div class='flex flex-col gap-1'>
@@ -37,21 +35,92 @@ const inputError = isInputError(result?.error) ? result.error.fields : {}
 			id='subject'
 			type='text'
 			name='subject'
-			class='flex-1 rounded-md ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)'
+			class='flex-1 rounded-md p-0.5 ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)'
+			aria-describedby='error-subject'
 		/>
+		<p id='error-subject' class='hidden text-sm text-red-700'></p>
 	</div>
 	<div class='flex flex-col gap-1'>
 		<label for='message'>Mensaje</label>
 		<textarea
 			id='message'
 			name='message'
-			class='rounded-md ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)'
-		></textarea>
+			class='rounded-md p-0.5 ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)'
+			aria-describedby='error-message'></textarea>
+		<p id='error-message' class='hidden text-sm text-red-700'></p>
 	</div>
-	<div class='mt-4 flex justify-center'>
+	<div class='mt-4 flex flex-col items-center justify-center'>
 		<button
-			class='cursor-pointer rounded-md border-none bg-(--color-accent)/50 px-4 py-2 ring-1 ring-(--color-accent) hover:bg-(--color-accent)/80'
+			id='formSubmit'
+			class='w-fit cursor-pointer rounded-md border-none bg-(--color-accent)/50 px-4 py-2 ring-1 ring-(--color-accent) hover:bg-(--color-accent)/80 disabled:cursor-not-allowed disabled:bg-slate-400/80 disabled:text-black disabled:ring-slate-800'
 			>Enviar</button
 		>
+		<p id='submitStatus' class='hidden text-sm text-green-700'></p>
 	</div>
 </form>
+<script>
+	import { actions, isInputError } from 'astro:actions'
+
+	const form = document.querySelector('form')
+	const submitStatusText = form?.querySelector('#submitStatus')
+	const buttonSubmit = form?.querySelector('#formSubmit')
+	const inputs = form?.querySelectorAll('input, textarea')
+
+	form?.addEventListener('submit', async e => {
+		e.preventDefault()
+		const formData = new FormData(form)
+		const { data, error } = await actions.contact(formData)
+		const inputError = isInputError(error) ? error.fields : {}
+
+		// Se limpia todo antes de recalcular: si un campo ya corregido no se
+		// resetea acá, conserva el mensaje de un intento anterior.
+		form.querySelectorAll('[id^="error-"]').forEach(input => {
+			input.textContent = ''
+			input.classList.toggle('hidden', true)
+		})
+		if (submitStatusText) {
+			submitStatusText.textContent = ''
+			submitStatusText.classList.toggle('hidden', true)
+			submitStatusText.classList.toggle('text-red-700', false)
+		}
+
+		Object.entries(inputError).forEach(item => {
+			const campo = form.querySelector(`#error-${item[0]}`)
+			if (campo) {
+				campo.textContent = item[1].join(', ') ?? ''
+				campo.classList.toggle('hidden', false)
+			}
+		})
+
+		if (data?.success && submitStatusText) {
+			submitStatusText.textContent = 'Formulario enviado con éxito'
+			submitStatusText.classList.toggle('hidden', false)
+			// Se fuerzan las dos clases de color explícitamente: si un envío
+			// anterior mostró error en rojo, el mensaje de éxito heredaría ese color.
+			submitStatusText.classList.toggle('text-red-700', false)
+			submitStatusText.classList.toggle('text-green-700', true)
+			if (buttonSubmit instanceof HTMLButtonElement) {
+				buttonSubmit.disabled = true
+			}
+			inputs?.forEach(item => {
+				// querySelectorAll tipa los elementos como Element genérico;
+				// solo Input/Textarea tienen `.value`, de ahí el instanceof.
+				if (
+					item instanceof HTMLInputElement ||
+					item instanceof HTMLTextAreaElement
+				) {
+					item.value = ''
+				}
+			})
+		}
+
+		// isInputError(error) en false con error presente = falla que no es de
+		// validación de campos (ej: Resend caído), no hay fields que mapear.
+		if (error && !isInputError(error) && submitStatusText) {
+			submitStatusText.textContent = error.message
+			submitStatusText.classList.toggle('text-green-700', false)
+			submitStatusText.classList.toggle('hidden', false)
+			submitStatusText.classList.toggle('text-red-700', true)
+		}
+	})
+</script>
