@@ -32,10 +32,11 @@ export const server = {
     }),
     handler: async ({ name, email, subject, message }) => {
       const { error } = await resend.emails.send({
-        from: 'Portfolio <onboarding@resend.dev>',
+        from: 'Portfolio <contacto@send.angelbyte.dev>',
         to: ['roberto.angel96@live.com'],
         subject,
         html: `<p><strong>${name}</strong> (${email}) escribió:</p><p>${message}</p>`,
+        replyTo: email,
       })
 
       if (error) {
