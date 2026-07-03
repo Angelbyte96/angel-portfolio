@@ -15,7 +15,8 @@
 				class='rounded-md p-0.5 ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)'
 				aria-describedby='error-name'
 			/>
-			<p id='error-name' class='hidden text-sm text-red-700'></p>
+			<p aria-live='polite' id='error-name' class='hidden text-sm text-red-700'>
+			</p>
 		</div>
 		<div class='flex flex-1 flex-col gap-1'>
 			<label for='email'>Correo</label>
@@ -26,7 +27,11 @@
 				class='rounded-md p-0.5 ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)'
 				aria-describedby='error-email'
 			/>
-			<p id='error-email' class='hidden text-sm text-red-700'></p>
+			<p
+				aria-live='polite'
+				id='error-email'
+				class='hidden text-sm text-red-700'>
+			</p>
 		</div>
 	</section>
 	<div class='flex flex-col gap-1'>
@@ -38,7 +43,11 @@
 			class='flex-1 rounded-md p-0.5 ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)'
 			aria-describedby='error-subject'
 		/>
-		<p id='error-subject' class='hidden text-sm text-red-700'></p>
+		<p
+			aria-live='polite'
+			id='error-subject'
+			class='hidden text-sm text-red-700'>
+		</p>
 	</div>
 	<div class='flex flex-col gap-1'>
 		<label for='message'>Mensaje</label>
@@ -47,7 +56,11 @@
 			name='message'
 			class='rounded-md p-0.5 ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)'
 			aria-describedby='error-message'></textarea>
-		<p id='error-message' class='hidden text-sm text-red-700'></p>
+		<p
+			aria-live='polite'
+			id='error-message'
+			class='hidden text-sm text-red-700'>
+		</p>
 	</div>
 	<div class='mt-4 flex flex-col items-center justify-center'>
 		<button
@@ -55,7 +68,7 @@
 			class='w-fit cursor-pointer rounded-md border-none bg-(--color-accent)/50 px-4 py-2 ring-1 ring-(--color-accent) hover:bg-(--color-accent)/80 disabled:cursor-not-allowed disabled:bg-slate-400/80 disabled:text-black disabled:ring-slate-800'
 			>Enviar</button
 		>
-		<p id='submitStatus' class='hidden text-sm text-green-700'></p>
+		<p role='alert' id='submitStatus' class='hidden text-sm text-green-700'></p>
 	</div>
 </form>
 <script>
