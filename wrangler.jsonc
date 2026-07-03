@@ -10,6 +10,10 @@
   "observability": {
     "enabled": true,
   },
+  "vars": {
+    // Sitekey de Turnstile: es público, va a texto plano en el HTML del sitio.
+    "TURNSTILE_SITE_KEY": "0x4AAAAAADvJ4HWcMKY2V2DV",
+  },
   "kv_namespaces": [
     {
       "binding": "SESSION",

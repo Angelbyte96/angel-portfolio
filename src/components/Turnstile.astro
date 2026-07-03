@@ -1,0 +1,120 @@
+---
+import { env } from 'cloudflare:workers'
+
+interface Props {
+  id: string
+  action: string
+  class?: string
+}
+
+const { id, action, class: className } = Astro.props
+const siteKey = env.TURNSTILE_SITE_KEY
+---
+
+<div
+  id={id}
+  data-sitekey={siteKey}
+  data-action={action}
+  class:list={['mx-auto w-fit', className]}
+>
+</div>
+
+<script>
+  interface TurnstileRenderOptions {
+    sitekey: string
+    action?: string
+    theme?: 'light' | 'dark' | 'auto'
+  }
+
+  declare global {
+    interface Window {
+      turnstile?: {
+        render: (
+          container: HTMLElement,
+          options: TurnstileRenderOptions,
+        ) => string | undefined
+        remove: (widgetId: string) => void
+      }
+    }
+  }
+
+  const SCRIPT_SRC =
+    'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
+  // key: container id, value: widget id devuelto por turnstile.render
+  const widgets = new Map<string, string>()
+
+  function loadScript(): Promise<void> {
+    if (window.turnstile) return Promise.resolve()
+
+    const existing = document.querySelector<HTMLScriptElement>(
+      'script[src^="https://challenges.cloudflare.com/turnstile/v0/api.js"]',
+    )
+    if (existing) {
+      return new Promise(resolve =>
+        existing.addEventListener('load', () => resolve()),
+      )
+    }
+
+    return new Promise(resolve => {
+      const script = document.createElement('script')
+      script.src = SCRIPT_SRC
+      script.defer = true
+      script.addEventListener('load', () => resolve())
+      document.head.appendChild(script)
+    })
+  }
+
+  function currentTheme(): 'light' | 'dark' {
+    return document.documentElement.classList.contains('dark')
+      ? 'dark'
+      : 'light'
+  }
+
+  async function renderWidgets() {
+    await loadScript()
+    document
+      .querySelectorAll<HTMLElement>('[data-sitekey]')
+      .forEach(container => {
+        if (!container.id || widgets.has(container.id) || !window.turnstile)
+          return
+
+        const widgetId = window.turnstile.render(container, {
+          sitekey: container.dataset.sitekey!,
+          action: container.dataset.action,
+          theme: currentTheme(),
+        })
+        if (widgetId) widgets.set(container.id, widgetId)
+      })
+  }
+
+  // Las View Transitions de Astro reemplazan el DOM sin recargar la página:
+  // hay que destruir los widgets antes del swap y volver a renderlos después,
+  // porque el render implícito de Turnstile no detecta contenedores nuevos.
+  function cleanupWidgets() {
+    widgets.forEach((widgetId, containerId) => {
+      window.turnstile?.remove(widgetId)
+      widgets.delete(containerId)
+    })
+  }
+
+  // Turnstile no expone forma de cambiar el theme de un widget ya renderizado:
+  // hay que destruirlo y recrearlo. El toggle de tema (ThemeToggle.astro) solo
+  // alterna la clase `dark` en <html>, así que la observamos para reaccionar.
+  function rerenderWidgets() {
+    cleanupWidgets()
+    void renderWidgets()
+  }
+
+  const themeObserver = new MutationObserver(rerenderWidgets)
+
+  document.addEventListener('astro:page-load', () => {
+    void renderWidgets()
+    themeObserver.observe(document.documentElement, {
+      attributeFilter: ['class'],
+    })
+  })
+  document.addEventListener('astro:before-swap', () => {
+    themeObserver.disconnect()
+    cleanupWidgets()
+  })
+</script>

@@ -3,6 +3,8 @@ import { ActionError, defineAction } from 'astro:actions'
 import { env } from 'cloudflare:workers'
 import { Resend } from 'resend'
 
+import { verifyTurnstileToken } from '../lib/turnstile'
+
 const resend = new Resend(env.RESEND_API_KEY)
 
 export const server = {
@@ -29,8 +31,25 @@ export const server = {
         .string({ error: 'El mensaje es obligatorio' })
         .min(3, { error: 'Debe tener al menos 3 caracteres' })
         .max(150, { error: 'No puede superar los 150 caracteres' }),
+      'cf-turnstile-response': z.string().optional(),
     }),
-    handler: async ({ name, email, subject, message }) => {
+    handler: async (
+      { name, email, subject, message, 'cf-turnstile-response': turnstileToken },
+      context,
+    ) => {
+      const isHuman = await verifyTurnstileToken(
+        turnstileToken ?? '',
+        env.TURNSTILE_SECRET_KEY,
+        context.request.headers.get('CF-Connecting-IP'),
+      )
+
+      if (!isHuman) {
+        throw new ActionError({
+          code: 'FORBIDDEN',
+          message: 'No se pudo verificar que sos una persona. Intentá de nuevo.',
+        })
+      }
+
       const { error } = await resend.emails.send({
         from: 'Portfolio <contacto@send.angelbyte.dev>',
         to: ['roberto.angel96@live.com'],

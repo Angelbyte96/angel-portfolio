@@ -1,4 +1,5 @@
 ---
+import Turnstile from './Turnstile.astro'
 
 const inputClass =
 	'rounded-md border border-(--color-border-subtle) bg-(--color-bg-elevated) px-3 py-2 text-(--color-text) transition-colors placeholder:text-(--color-text-muted) focus:outline-none focus-visible:border-(--color-accent) focus-visible:ring-2 focus-visible:ring-(--color-accent)'
@@ -66,6 +67,7 @@ const errorClass = 'hidden text-sm text-red-600 dark:text-red-400'
 				aria-describedby='error-message'></textarea>
 			<p aria-live='polite' id='error-message' class={errorClass}></p>
 		</div>
+		<Turnstile id='turnstile-contact' action='contact' />
 		<div class='mt-2 flex flex-col items-center justify-center gap-2'>
 			<button
 				id='formSubmit'
