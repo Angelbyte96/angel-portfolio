@@ -1,76 +1,85 @@
 ---
 
+const inputClass =
+	'rounded-md border border-(--color-border-subtle) bg-(--color-bg-elevated) px-3 py-2 text-(--color-text) transition-colors placeholder:text-(--color-text-muted) focus:outline-none focus-visible:border-(--color-accent) focus-visible:ring-2 focus-visible:ring-(--color-accent)'
+const labelClass = 'text-sm font-medium text-(--color-text-muted)'
+const errorClass = 'hidden text-sm text-red-600 dark:text-red-400'
 ---
 
-<form
-	novalidate
-	class='my-4 flex flex-col gap-2 rounded-2xl bg-(--color-bg-card) p-1 px-2 py-4 text-white shadow-(--card-shadow) ring-1 ring-(--color-border) backdrop-blur-lg dark:ring-(--color-border)'>
-	<section class='flex justify-between gap-4'>
-		<div class='flex flex-1 flex-col gap-1'>
-			<label for='name'>Nombre</label>
+<section
+	id='contact'
+	class='mx-auto my-2 w-full text-[var(--color-text)] md:my-4'>
+	<h1 class='mb-2 text-3xl md:mb-4 md:text-4xl'>Contacto</h1>
+	<p class='mb-4 text-sm md:text-base'>
+		Rellena este <span class='font-semibold text-[var(--color-accent)]'
+			>formulario</span
+		> y me pondré en contacto contigo <span
+			class='font-medium text-[var(--color-highlight)]'
+			>lo antes posible</span
+		>.
+	</p>
+	<form
+		novalidate
+		class='flex w-full flex-col gap-4 rounded-2xl border border-(--color-border) bg-(--color-bg-card) p-4 shadow-(--card-shadow) backdrop-blur-lg md:p-6'>
+		<div class='flex flex-col gap-4 sm:flex-row sm:justify-between'>
+			<div class='flex flex-1 flex-col gap-1'>
+				<label for='name' class={labelClass}>Nombre</label>
+				<input
+					id='name'
+					type='text'
+					name='name'
+					class={inputClass}
+					aria-describedby='error-name'
+				/>
+				<p aria-live='polite' id='error-name' class={errorClass}></p>
+			</div>
+			<div class='flex flex-1 flex-col gap-1'>
+				<label for='contact-email' class={labelClass}>Correo</label>
+				<input
+					id='contact-email'
+					type='email'
+					name='email'
+					class={inputClass}
+					aria-describedby='error-email'
+				/>
+				<p aria-live='polite' id='error-email' class={errorClass}></p>
+			</div>
+		</div>
+		<div class='flex flex-col gap-1'>
+			<label for='subject' class={labelClass}>Asunto</label>
 			<input
-				id='name'
+				id='subject'
 				type='text'
-				name='name'
-				class='rounded-md p-0.5 ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)'
-				aria-describedby='error-name'
+				name='subject'
+				class={`flex-1 ${inputClass}`}
+				aria-describedby='error-subject'
 			/>
-			<p aria-live='polite' id='error-name' class='hidden text-sm text-red-700'>
-			</p>
+			<p aria-live='polite' id='error-subject' class={errorClass}></p>
 		</div>
-		<div class='flex flex-1 flex-col gap-1'>
-			<label for='email'>Correo</label>
-			<input
-				id='email'
-				type='email'
-				name='email'
-				class='rounded-md p-0.5 ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)'
-				aria-describedby='error-email'
-			/>
+		<div class='flex flex-col gap-1'>
+			<label for='message' class={labelClass}>Mensaje</label>
+			<textarea
+				id='message'
+				name='message'
+				rows='5'
+				class={inputClass}
+				aria-describedby='error-message'></textarea>
+			<p aria-live='polite' id='error-message' class={errorClass}></p>
+		</div>
+		<div class='mt-2 flex flex-col items-center justify-center gap-2'>
+			<button
+				id='formSubmit'
+				class='w-fit cursor-pointer rounded-md bg-(--color-accent) px-6 py-2 font-medium text-(--color-bg) transition-colors hover:bg-(--color-accent)/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent) focus-visible:ring-offset-2 focus-visible:ring-offset-(--color-bg-card) disabled:cursor-not-allowed disabled:bg-(--color-text-muted)/40 disabled:text-(--color-text-muted)'
+				>Enviar</button
+			>
 			<p
-				aria-live='polite'
-				id='error-email'
-				class='hidden text-sm text-red-700'>
+				role='alert'
+				id='submitStatus'
+				class='hidden text-sm text-green-600 dark:text-green-400'>
 			</p>
 		</div>
-	</section>
-	<div class='flex flex-col gap-1'>
-		<label for='subject'>Asunto</label>
-		<input
-			id='subject'
-			type='text'
-			name='subject'
-			class='flex-1 rounded-md p-0.5 ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)'
-			aria-describedby='error-subject'
-		/>
-		<p
-			aria-live='polite'
-			id='error-subject'
-			class='hidden text-sm text-red-700'>
-		</p>
-	</div>
-	<div class='flex flex-col gap-1'>
-		<label for='message'>Mensaje</label>
-		<textarea
-			id='message'
-			name='message'
-			class='rounded-md p-0.5 ring focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)'
-			aria-describedby='error-message'></textarea>
-		<p
-			aria-live='polite'
-			id='error-message'
-			class='hidden text-sm text-red-700'>
-		</p>
-	</div>
-	<div class='mt-4 flex flex-col items-center justify-center'>
-		<button
-			id='formSubmit'
-			class='w-fit cursor-pointer rounded-md border-none bg-(--color-accent)/50 px-4 py-2 ring-1 ring-(--color-accent) hover:bg-(--color-accent)/80 disabled:cursor-not-allowed disabled:bg-slate-400/80 disabled:text-black disabled:ring-slate-800'
-			>Enviar</button
-		>
-		<p role='alert' id='submitStatus' class='hidden text-sm text-green-700'></p>
-	</div>
-</form>
+	</form>
+</section>
 <script>
 	import { actions, isInputError } from 'astro:actions'
 
@@ -94,7 +103,8 @@
 		if (submitStatusText) {
 			submitStatusText.textContent = ''
 			submitStatusText.classList.toggle('hidden', true)
-			submitStatusText.classList.toggle('text-red-700', false)
+			submitStatusText.classList.toggle('text-red-600', false)
+			submitStatusText.classList.toggle('dark:text-red-400', false)
 		}
 
 		Object.entries(inputError).forEach(item => {
@@ -108,10 +118,12 @@
 		if (data?.success && submitStatusText) {
 			submitStatusText.textContent = 'Formulario enviado con éxito'
 			submitStatusText.classList.toggle('hidden', false)
-			// Se fuerzan las dos clases de color explícitamente: si un envío
+			// Se fuerzan las clases de color explícitamente: si un envío
 			// anterior mostró error en rojo, el mensaje de éxito heredaría ese color.
-			submitStatusText.classList.toggle('text-red-700', false)
-			submitStatusText.classList.toggle('text-green-700', true)
+			submitStatusText.classList.toggle('text-red-600', false)
+			submitStatusText.classList.toggle('dark:text-red-400', false)
+			submitStatusText.classList.toggle('text-green-600', true)
+			submitStatusText.classList.toggle('dark:text-green-400', true)
 			if (buttonSubmit instanceof HTMLButtonElement) {
 				buttonSubmit.disabled = true
 			}
@@ -131,9 +143,11 @@
 		// validación de campos (ej: Resend caído), no hay fields que mapear.
 		if (error && !isInputError(error) && submitStatusText) {
 			submitStatusText.textContent = error.message
-			submitStatusText.classList.toggle('text-green-700', false)
+			submitStatusText.classList.toggle('text-green-600', false)
+			submitStatusText.classList.toggle('dark:text-green-400', false)
 			submitStatusText.classList.toggle('hidden', false)
-			submitStatusText.classList.toggle('text-red-700', true)
+			submitStatusText.classList.toggle('text-red-600', true)
+			submitStatusText.classList.toggle('dark:text-red-400', true)
 		}
 	})
 </script>
