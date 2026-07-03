@@ -7,6 +7,35 @@ import { verifyTurnstileToken } from '../lib/turnstile'
 
 const resend = new Resend(env.RESEND_API_KEY)
 
+const escapeHtml = (value: string) =>
+  value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+
+const buildContactEmailHtml = ({
+  name,
+  email,
+  subject,
+  message,
+}: {
+  name: string
+  email: string
+  subject: string
+  message: string
+}) => `
+  <div style="font-family: sans-serif; max-width: 480px; margin: 0 auto; color: #1a1a1a;">
+    <h2 style="margin: 0 0 16px;">Nuevo mensaje de contacto</h2>
+    <p style="margin: 0 0 8px;">
+      <strong>${escapeHtml(name)}</strong> &lt;${escapeHtml(email)}&gt;
+    </p>
+    <p style="margin: 0 0 16px; color: #555;">${escapeHtml(subject)}</p>
+    <p style="margin: 0; white-space: pre-wrap;">${escapeHtml(message)}</p>
+  </div>
+`
+
 export const server = {
   contact: defineAction({
     accept: 'form',
@@ -54,7 +83,7 @@ export const server = {
         from: 'Portfolio <contacto@send.angelbyte.dev>',
         to: ['roberto.angel96@live.com'],
         subject,
-        html: `<p><strong>${name}</strong> (${email}) escribió:</p><p>${message}</p>`,
+        html: buildContactEmailHtml({ name, email, subject, message }),
         replyTo: email,
       })
 
