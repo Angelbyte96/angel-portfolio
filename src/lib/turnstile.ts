@@ -11,7 +11,14 @@ export async function verifyTurnstileToken(
   if (remoteIp) body.append('remoteip', remoteIp)
 
   const response = await fetch(SITEVERIFY_URL, { method: 'POST', body })
-  const outcome = await response.json<{ success: boolean }>()
+  const outcome = await response.json<{
+    success: boolean
+    'error-codes'?: string[]
+  }>()
+
+  if (!outcome.success) {
+    console.error('Turnstile siteverify rejected the token:', outcome['error-codes'])
+  }
 
   return outcome.success
 }
