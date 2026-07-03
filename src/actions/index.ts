@@ -26,14 +26,50 @@ const buildContactEmailHtml = ({
   subject: string
   message: string
 }) => `
-  <div style="font-family: sans-serif; max-width: 480px; margin: 0 auto; color: #1a1a1a;">
-    <h2 style="margin: 0 0 16px;">Nuevo mensaje de contacto</h2>
-    <p style="margin: 0 0 8px;">
-      <strong>${escapeHtml(name)}</strong> &lt;${escapeHtml(email)}&gt;
-    </p>
-    <p style="margin: 0 0 16px; color: #555;">${escapeHtml(subject)}</p>
-    <p style="margin: 0; white-space: pre-wrap;">${escapeHtml(message)}</p>
-  </div>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="color-scheme" content="light" />
+    <meta name="supported-color-schemes" content="light" />
+  </head>
+  <body style="margin: 0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #f8fafc; padding: 32px 0;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="480" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; font-family: Arial, Helvetica, sans-serif;">
+            <tr>
+              <td style="background-color: #1a0c34; padding: 20px 24px;">
+                <span style="color: #ffffff; font-size: 16px; font-weight: bold;">Nuevo mensaje de contacto</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 24px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-size: 14px; color: #171717;">
+                  <tr>
+                    <td style="padding: 4px 0; color: #525252; width: 80px;">Nombre</td>
+                    <td style="padding: 4px 0;">${escapeHtml(name)}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 0; color: #525252;">Email</td>
+                    <td style="padding: 4px 0;">
+                      <a href="mailto:${escapeHtml(email)}" style="color: #0f766e; text-decoration: none;">${escapeHtml(email)}</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 0; color: #525252;">Asunto</td>
+                    <td style="padding: 4px 0;">${escapeHtml(subject)}</td>
+                  </tr>
+                </table>
+                <div style="margin-top: 20px; padding: 16px; background-color: #f1f5f9; border-radius: 6px; font-size: 14px; line-height: 1.5; color: #171717; white-space: pre-wrap;">${escapeHtml(message)}</div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
 `
 
 export const server = {
