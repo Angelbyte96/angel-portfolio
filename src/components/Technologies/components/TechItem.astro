@@ -11,7 +11,7 @@ const { name, icon, class: className, ...rest } = Astro.props
 
 <li
   class:list={[
-    'flex flex-col items-center justify-center gap-1 text-[var(--color-text)]',
+    'flex flex-col items-center justify-center gap-1 text-(--color-text)',
     className,
   ]}
   {...rest}
