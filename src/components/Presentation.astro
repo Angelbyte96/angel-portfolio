@@ -1,18 +1,18 @@
 ---
 const style = {
-  a: 'relative flex items-center justify-center rounded-full border border-white/10 bg-black/5 p-2.5 text-[var(--color-text)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-accent)] hover:shadow-[0_0_20px_-5px_var(--color-accent)] md:p-3',
-  svg: 'z-10 h-5 w-5 fill-current transition-all duration-300 group-hover:scale-110 group-hover:text-[var(--color-accent)] md:h-6 md:w-6',
-  bgHover: 'absolute inset-0 z-0 overflow-hidden rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100 before:absolute before:inset-0 before:bg-gradient-to-tr before:from-[var(--color-accent)]/0 before:via-[var(--color-accent)]/10 before:to-[var(--color-accent)]/0',
+  a: 'relative flex items-center justify-center rounded-full border border-white/10 bg-black/5 p-2.5 text-(--color-text) backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-(--color-accent) hover:shadow-[0_0_20px_-5px_var(--color-accent)] md:p-3',
+  svg: 'z-10 h-5 w-5 fill-current transition-all duration-300 group-hover:scale-110 group-hover:text-(--color-accent) md:h-6 md:w-6',
+  bgHover: 'absolute inset-0 z-0 overflow-hidden rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100 before:absolute before:inset-0 before:bg-linear-to-tr before:from-(--color-accent)/0 before:via-(--color-accent)/10 before:to-(--color-accent)/0',
 }
 ---
 
 <main class="mx-auto w-full" id="inicio">
   <section
-    class="mx-auto grid w-full grid-cols-2 grid-rows-[auto_auto_auto_auto] gap-1 text-[var(--color-text)]"
+    class="mx-auto grid w-full grid-cols-2 grid-rows-[auto_auto_auto_auto] gap-1 text-(--color-text)"
   >
     <div class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-end p-1">
       <h1 class="text-2xl md:text-3xl">
-        Hola, <span class="font-semibold text-[var(--color-accent)]"
+        Hola, <span class="font-semibold text-(--color-accent)"
           >soy Angel</span
         >
       </h1>
@@ -27,19 +27,19 @@ const style = {
     <div class="col-start-1 col-end-2 row-start-3 row-end-4 flex p-1">
       <p class="text-sm text-wrap md:text-base lg:text-lg">
         Especializado en construir
-        <span class="font-semibold text-[var(--color-accent)]"
+        <span class="font-semibold text-(--color-accent)"
           >soluciones digitales de alto rendimiento</span
         >
         y
-        <span class="font-semibold text-[var(--color-accent)]"
+        <span class="font-semibold text-(--color-accent)"
           >escalabilidad</span
         >
         mediante
-        <span class="font-medium text-[var(--color-highlight)]"
+        <span class="font-medium text-(--color-highlight)"
           >flujos de trabajo optimizados</span
         >
         y
-        <span class="font-medium text-[var(--color-highlight)]"
+        <span class="font-medium text-(--color-highlight)"
           >tecnologías de vanguardia</span
         >.
       </p>
@@ -106,9 +106,9 @@ const style = {
               class="fill-current"
             ></path>
           </svg>
-          <div id="email-tooltip" class="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[var(--color-accent)] px-2 py-1 text-[10px] font-bold text-white opacity-0 shadow-lg transition-all duration-300 pointer-events-none scale-90">
+          <div id="email-tooltip" class="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-(--color-accent) px-2 py-1 text-[10px] font-bold text-white opacity-0 shadow-lg transition-all duration-300 pointer-events-none scale-90">
             ¡Copiado!
-            <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[var(--color-accent)]"></div>
+            <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 border-4 border-transparent border-t-(--color-accent)"></div>
           </div>
         </button>
       </li>
