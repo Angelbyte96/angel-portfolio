@@ -117,7 +117,7 @@ export const server = {
 
       const { error } = await resend.emails.send({
         from: 'Portfolio <contacto@send.angelbyte.dev>',
-        to: ['roberto.angel96@live.com'],
+        to: ['hola@angelbyte.dev'],
         subject,
         html: buildContactEmailHtml({ name, email, subject, message }),
         replyTo: email,
