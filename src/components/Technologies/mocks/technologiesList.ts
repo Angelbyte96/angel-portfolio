@@ -49,28 +49,12 @@ export const technologiesList: TechnologiesList = {
   ],
   learning: [
     {
-      name: 'C#',
-      icon: 'csharp',
-    },
-    {
-      name: 'NextJS',
-      icon: 'nextjs',
-    },
-    {
       name: 'NodeJS',
       icon: 'nodejs',
     },
     {
       name: 'ExpressJS',
       icon: 'express',
-    },
-    {
-      name: 'Figma',
-      icon: 'figma',
-    },
-    {
-      name: 'Python',
-      icon: 'python',
     },
   ],
   tools: [
