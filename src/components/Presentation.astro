@@ -15,49 +15,54 @@ const style = {
 
 <main class="mx-auto w-full" id="inicio">
   <section
-    class="mx-auto grid w-full grid-cols-2 grid-rows-[auto_auto_auto_auto] gap-1 text-(--color-text)"
+    class="mx-auto grid w-full grid-cols-1 grid-rows-[auto_auto_auto_auto_auto] gap-1 text-(--color-text) md:grid-cols-2 md:grid-rows-[auto_auto_auto_auto]"
   >
-    <div class="col-start-1 col-end-2 row-start-1 row-end-2 flex items-end p-1">
+    <div
+      class="flex items-end p-1 md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2"
+    >
       <h1 class="text-2xl md:text-3xl">
         Hola, <span class="font-semibold text-(--color-accent)">soy Angel</span>
       </h1>
     </div>
     <div
-      class="col-start-1 col-end-2 row-start-2 row-end-3 flex items-start p-1"
+      class="flex w-full items-center justify-center p-1 md:col-start-2 md:col-end-2 md:row-start-1 md:row-end-5"
+    >
+      <img
+        class="aspect-square w-7/12 rounded-full object-cover sm:w-1/2 md:w-full lg:w-9/12 xl:w-7/12"
+        src="/Angel-Profile.webp"
+      />
+    </div>
+    <div
+      class="flex items-start p-1 md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-3"
     >
       <h4 class="-mt-2 p-0 text-sm md:text-base">
         Desarrollador Web & Pasante de Ingeniería en Software y Redes
       </h4>
     </div>
-    <div class="col-start-1 col-end-2 row-start-3 row-end-4 flex p-1">
+    <div
+      class="flex p-1 md:col-start-1 md:col-end-2 md:row-start-3 md:row-end-4"
+    >
       <p class="text-sm text-wrap md:text-base lg:text-lg">
-        Especializado en construir
+        Especializado en construir{' '}
         <span class="font-semibold text-(--color-accent)"
           >soluciones digitales de alto rendimiento</span
-        >
-        y
-        <span class="font-semibold text-(--color-accent)">escalabilidad</span>
-        mediante
+        >{' '}
+        y{' '}
+        <span class="font-semibold text-(--color-accent)">escalabilidad</span
+        >{' '}
+        mediante{' '}
         <span class="font-medium text-(--color-highlight)"
           >flujos de trabajo optimizados</span
-        >
-        y
+        >{' '}
+        y{' '}
         <span class="font-medium text-(--color-highlight)"
           >tecnologías de vanguardia</span
         >.
       </p>
     </div>
-    <div
-      class="col-start-2 col-end-2 row-start-1 row-end-5 flex w-full items-center justify-center p-1"
-    >
-      <img
-        class="aspect-square w-9/12 rounded-full object-cover sm:w-7/12 md:w-full lg:w-9/12 xl:w-7/12"
-        src="/Angel-Profile.webp"
-      />
-    </div>
     <ul
       id="link-redes"
-      class="col-start-1 col-end-2 row-start-4 row-end-4 flex p-1 text-base"
+      class="flex p-1 text-base md:col-start-1 md:col-end-2 md:row-start-4 md:row-end-4"
     >
       <li class="flex h-min list-none flex-row flex-wrap gap-4 md:gap-5">
         <a
