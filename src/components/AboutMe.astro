@@ -1,3 +1,7 @@
+---
+import { FileUser } from "@lucide/astro";
+---
+
 <section
 	class='mx-auto my-2 flex w-full flex-col items-center justify-center gap-3 text-(--color-text) md:my-4'
 	id='aboutme'>
@@ -54,17 +58,6 @@
 		rel='noopener noreferrer'
 		class='flex w-fit items-center justify-center gap-2 rounded-md bg-(--color-accent) px-5 py-2 text-sm font-medium text-(--color-bg) transition-colors hover:bg-(--color-accent)/80 focus-visible:ring-2 focus-visible:ring-(--color-accent) focus-visible:ring-offset-2 focus-visible:ring-offset-(--color-bg) focus-visible:outline-none md:text-base'>
 		Curriculum
-		<svg
-			fill='currentColor'
-			xmlns='http://www.w3.org/2000/svg'
-			x='0px'
-			y='0px'
-			width='15'
-			height='15'
-			viewBox='0 0 50 50'>
-			<path
-				d='M 7 2 L 7 48 L 43 48 L 43 14.59375 L 42.71875 14.28125 L 30.71875 2.28125 L 30.40625 2 Z M 9 4 L 29 4 L 29 16 L 41 16 L 41 46 L 9 46 Z M 31 5.4375 L 39.5625 14 L 31 14 Z M 15 22 L 15 24 L 35 24 L 35 22 Z M 15 28 L 15 30 L 31 30 L 31 28 Z M 15 34 L 15 36 L 35 36 L 35 34 Z'
-			></path>
-		</svg>
+		<FileUser size={15}/>
 	</a>
 </section>
