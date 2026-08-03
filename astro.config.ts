@@ -1,4 +1,4 @@
-import { defineConfig, fontProviders } from 'astro/config'
+import { defineConfig, envField, fontProviders } from 'astro/config'
 
 import tailwindcss from '@tailwindcss/vite'
 
@@ -17,4 +17,9 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   adapter: cloudflare(),
+  env: {
+    schema: {
+      CV_URL: envField.string({ context: 'server', access: 'public' }),
+    },
+  },
 })
