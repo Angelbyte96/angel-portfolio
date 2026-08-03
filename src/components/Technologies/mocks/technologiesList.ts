@@ -46,12 +46,12 @@ export const technologiesList: TechnologiesList = {
       name: 'MySQL',
       icon: 'mysql',
     },
-  ],
-  learning: [
     {
       name: 'NodeJS',
       icon: 'nodejs',
-    },
+    }
+  ],
+  learning: [
     {
       name: 'ExpressJS',
       icon: 'express',
