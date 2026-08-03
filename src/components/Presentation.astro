@@ -1,4 +1,5 @@
 ---
+import { CV_URL } from 'astro:env/server'
 import { FileUser, Mail } from '@lucide/astro'
 import GithubIcon from '@components/icons/GithubIcon.astro'
 import LinkedinIcon from '@components/icons/LinkedinIcon.astro'
@@ -104,7 +105,7 @@ const style = {
           </div>
         </button>
         <a
-          href="https://res.cloudinary.com/ddinz4ewu/image/upload/v1783275005/Recursos/Portfolio/CV_Angel_krkll9.pdf"
+          href={CV_URL}
           class=`group ${style.a}`
           target="_blank"
           rel="noopener noreferrer"

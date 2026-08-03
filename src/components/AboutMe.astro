@@ -1,4 +1,5 @@
 ---
+import { CV_URL } from 'astro:env/server'
 import { FileUser } from "@lucide/astro";
 ---
 
@@ -53,7 +54,7 @@ import { FileUser } from "@lucide/astro";
 		> y construcción de equipos.
 	</p>
 	<a
-		href='https://res.cloudinary.com/ddinz4ewu/image/upload/v1783275005/Recursos/Portfolio/CV_Angel_krkll9.pdf'
+		href={CV_URL}
 		target='_blank'
 		rel='noopener noreferrer'
 		class='flex w-fit items-center justify-center gap-2 rounded-md bg-(--color-accent) px-5 py-2 text-sm font-medium text-(--color-bg) transition-colors hover:bg-(--color-accent)/80 focus-visible:ring-2 focus-visible:ring-(--color-accent) focus-visible:ring-offset-2 focus-visible:ring-offset-(--color-bg) focus-visible:outline-none md:text-base'>
