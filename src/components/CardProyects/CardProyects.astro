@@ -6,7 +6,7 @@ import { ArrowUpRight } from '@lucide/astro'
 ---
 
 <article
-  class="relative flex w-fit flex-col items-center gap-2 rounded-2xl border border-(--color-border) bg-(--color-bg-card) px-2 py-4 shadow-(--card-shadow) backdrop-blur-lg transform-gpu"
+  class="relative flex w-full flex-col items-center gap-2 rounded-2xl border border-(--color-border) bg-(--color-bg-card) px-2 py-4 shadow-(--card-shadow) backdrop-blur-lg transform-gpu"
 >
   {github && (
     <a
@@ -21,11 +21,12 @@ import { ArrowUpRight } from '@lucide/astro'
   )}
   <a
     href={`/proyect/${slug}/`}
-    class="mb-2 transition hover:scale-[1.02] xl:mb-0"
+    class="mb-2 block w-full transition hover:scale-[1.02] xl:mb-0"
   >
     <img
       transition:name={`img-${slug}`}
-      class=`rounded-3xl aspect-[${imgSize}]`
+      class="w-full rounded-3xl object-cover"
+      style={`aspect-ratio: ${imgSize};`}
       src={img}
       alt={title}
     />

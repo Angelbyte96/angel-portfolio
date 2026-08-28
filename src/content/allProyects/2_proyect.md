@@ -3,7 +3,7 @@ title: SpendList
 description: Aplicación web para crear y gestionar listas de compras con cálculo automático de gastos en tiempo real.
 img: https://res.cloudinary.com/ddinz4ewu/image/upload/v1757182123/Recursos/SpendList/HomeDescrip_owsnkv.webp
 tags: [Astro, React, TypeScript, Tailwind]
-imgSize: '695/400'
+imgSize: '1014/438'
 styleBody: flex flex-col items-center min-h-screen bg-scroll md:bg-fixed font-monda body-proyect-2
 url: https://spend-list-rouge.vercel.app/
 github: https://github.com/Angelbyte96/SpendList

@@ -38,7 +38,8 @@ const { Content } = await render(proyect)
   <div class="relative inline-block">
     <a href={url} target="_blank" rel="noopener noreferrer" class="group">
       <img
-        class={`rounded-3xl aspect-[${imgSize}] transition-all duration-300 group-hover:animate-pulse`}
+        class="w-full rounded-3xl object-cover transition-all duration-300 group-hover:animate-pulse"
+        style={`aspect-ratio: ${imgSize};`}
         src={img}
         alt=""
       />
