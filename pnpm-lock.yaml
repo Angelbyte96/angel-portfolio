@@ -19,6 +19,7 @@ overrides:
   postcss-selector-parser@^7.0.0: ^7.1.3
   js-yaml: ^4.3.2
   nanoid: ^3.3.18
+  smol-toml: ^1.7.1
 
 importers:
 
@@ -2601,8 +2602,8 @@ packages:
   sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
 
-  smol-toml@1.6.1:
-    resolution: {integrity: sha512-dWUG8F5sIIARXih1DTaQAX4SsiTXhInKf1buxdY9DIg4ZYPZK5nGM1VRIYmEbDbsHt7USo99xSLFu5Q1IqTmsg==}
+  smol-toml@1.8.0:
+    resolution: {integrity: sha512-kCZr2V3ch9i00x8zXRhjUNVcjG9ijES5dDudkXvUVCT5QlJNQWElSJdZqyPemffHoLNUYwOcou0Fy+ojN0uHSQ==}
     engines: {node: '>= 18'}
 
   source-map-js@1.2.1:
@@ -3106,7 +3107,7 @@ snapshots:
       picomatch: 4.0.4
       retext-smartypants: 6.2.0
       shiki: 4.1.0
-      smol-toml: 1.6.1
+      smol-toml: 1.8.0
       unified: 11.0.5
 
   '@astrojs/markdown-satteri@0.4.1':
@@ -4112,7 +4113,7 @@ snapshots:
       picomatch: 4.0.4
       semver: 7.8.1
       shiki: 4.1.0
-      smol-toml: 1.6.1
+      smol-toml: 1.8.0
       svgo: 4.1.0
       tinyclip: 0.1.13
       tinyexec: 1.2.2
@@ -5661,7 +5662,7 @@ snapshots:
 
   sisteransi@1.0.5: {}
 
-  smol-toml@1.6.1: {}
+  smol-toml@1.8.0: {}
 
   source-map-js@1.2.1: {}
 
