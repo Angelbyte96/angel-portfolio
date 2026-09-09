@@ -19,3 +19,4 @@ overrides:
   'postcss-selector-parser@^7.0.0': ^7.1.3
   js-yaml: ^4.3.2
   nanoid: ^3.3.18
+  smol-toml: ^1.7.1
