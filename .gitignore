@@ -30,3 +30,6 @@ pnpm-debug.log*
 .dev.vars*
 !.dev.vars.example
 !.env.example
+
+# Engram memories sync through a private repo
+.engram/
