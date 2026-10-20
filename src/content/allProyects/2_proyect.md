@@ -19,36 +19,40 @@ Planificar compras sin perder el hilo del presupuesto. SpendList calcula automá
 
 ## Stack
 
-| Capa | Tecnología |
-|------|-----------|
-| Framework | Astro 6 + React 19 |
-| Lenguaje | TypeScript |
-| Estilos | Tailwind CSS v4 |
-| Componentes | Radix UI (Dialog, Select) + Lucide React |
-| Base de datos | Astro DB + Turso (SQLite) |
-| Auth | Clerk *(en desarrollo)* |
-| Deploy | Vercel + Vercel Analytics |
-| Notificaciones | @pheralb/toast |
-| Fechas | @formkit/tempo |
+| Capa           | Tecnología                               |
+| -------------- | ---------------------------------------- |
+| Framework      | Astro 6 + React 19                       |
+| Lenguaje       | TypeScript                               |
+| Estilos        | Tailwind CSS v4                          |
+| Componentes    | Radix UI (Dialog, Select) + Lucide React |
+| Base de datos  | Astro DB + Turso (SQLite)                |
+| Auth           | Clerk _(en desarrollo)_                  |
+| Deploy         | Vercel + Vercel Analytics                |
+| Notificaciones | @pheralb/toast                           |
+| Fechas         | @formkit/tempo                           |
 
 ## Funcionalidades
 
 **Gestión de listas**
+
 - Crear, editar y eliminar listas con nombre personalizado
 - Registro automático de fecha de creación y última modificación
 
 **Artículos**
+
 - Agregar ítems con nombre, precio y cantidad
 - Marcar artículos como comprados o pendientes
 - Eliminación individual o limpieza completa
 
 **Control de gastos**
+
 - Total calculado en tiempo real al modificar cualquier ítem
 - Estadísticas de cantidad de artículos y monto acumulado
 
 **Modos de almacenamiento**
+
 - **Demo** — `localStorage`, sin registro, disponible ahora
-- **Persistente** — Astro DB + Turso, requiere cuenta *(en desarrollo)*
+- **Persistente** — Astro DB + Turso, requiere cuenta _(en desarrollo)_
 
 ## Rutas
 

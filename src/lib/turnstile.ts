@@ -1,4 +1,5 @@
-const SITEVERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify'
+const SITEVERIFY_URL =
+  'https://challenges.cloudflare.com/turnstile/v0/siteverify'
 
 export async function verifyTurnstileToken(
   token: string,
@@ -17,7 +18,10 @@ export async function verifyTurnstileToken(
   }>()
 
   if (!outcome.success) {
-    console.error('Turnstile siteverify rejected the token:', outcome['error-codes'])
+    console.error(
+      'Turnstile siteverify rejected the token:',
+      outcome['error-codes'],
+    )
   }
 
   return outcome.success

@@ -49,7 +49,7 @@ export const technologiesList: TechnologiesList = {
     {
       name: 'NodeJS',
       icon: 'nodejs',
-    }
+    },
   ],
   learning: [
     {

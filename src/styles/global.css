@@ -19,7 +19,7 @@
 
   /* Acentos de texto para light mode */
   --color-highlight: #7c3aed; /* violeta fuerte */
-  --color-accent: #0f766e;    /* teal profundo */
+  --color-accent: #0f766e; /* teal profundo */
 
   /* Efecto glow del fondo (estilo Astro) */
   --glow-color-1: rgba(168, 85, 247, 0.35); /* núcleo lila sutil */
