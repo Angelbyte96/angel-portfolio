@@ -99,7 +99,13 @@ export const server = {
       'cf-turnstile-response': z.string().optional(),
     }),
     handler: async (
-      { name, email, subject, message, 'cf-turnstile-response': turnstileToken },
+      {
+        name,
+        email,
+        subject,
+        message,
+        'cf-turnstile-response': turnstileToken,
+      },
       context,
     ) => {
       const isHuman = await verifyTurnstileToken(
@@ -111,7 +117,8 @@ export const server = {
       if (!isHuman) {
         throw new ActionError({
           code: 'FORBIDDEN',
-          message: 'No se pudo verificar que seas una persona. Intentá de nuevo.',
+          message:
+            'No se pudo verificar que seas una persona. Intentá de nuevo.',
         })
       }
 

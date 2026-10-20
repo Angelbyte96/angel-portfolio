@@ -1,64 +1,59 @@
 ---
 import { CV_URL } from 'astro:env/server'
-import { FileUser } from "@lucide/astro";
+import { FileUser } from '@lucide/astro'
 ---
 
 <section
-	class='mx-auto my-2 flex w-full flex-col items-center justify-center gap-3 text-(--color-text) md:my-4'
-	id='aboutme'>
-	<h1 class='mb-2 self-start text-3xl md:mb-4 md:text-4xl'>Sobre Mi</h1>
-	<img
-		class='aspect-square w-4/12 rounded-full object-cover'
-		src='/Angel-AboutMe.webp'
-		alt='Foto de perfil'
-	/>
-	<p class='mb-4 self-start text-sm md:text-base'>
-		¡Hola, soy <span class='font-semibold text-(--color-accent)'
-			>Ángel</span
-		>!
-		<span class='font-medium text-(--color-highlight)'
-			>Desarrollador Web</span
-		> y egresado de
-		<span class='font-medium text-(--color-highlight)'
-			>Ingeniería en Software y Redes</span
-		>. Disfruto transformar la <span
-			class='font-semibold text-(--color-accent)'>lógica compleja</span
-		> en
-		<span class='font-semibold text-(--color-accent)'
-			>soluciones eficientes y escalables</span
-		>.
-	</p>
-	<p class='mb-4 self-start text-sm md:text-base'>
-		Me considero un desarrollador en
-		<span class='font-medium text-(--color-highlight)'
-			>constante evolución</span
-		>; actualmente dedico tiempo a optimizar mi
-		<span class='font-semibold text-(--color-accent)'
-			>entorno de trabajo</span
-		> y adoptar
-		<span class='font-medium text-(--color-highlight)'
-			>herramientas modernas</span
-		> que agilicen mi
-		<span class='font-semibold text-(--color-accent)'
-			>flujo de desarrollo</span
-		> diario. Mi meta a mediano plazo es consolidarme como
-		<span class='font-medium text-(--color-highlight)'>Fullstack</span>.
-	</p>
-	<p class='mb-4 self-start text-sm md:text-base'>
-		Fuera de la programación, mantengo activo mi lado
-		<span class='font-semibold text-(--color-accent)'>analítico</span> con
-		<span class='font-medium text-(--color-highlight)'>videojuegos</span> que
-		requieren
-		<span class='font-medium text-(--color-highlight)'
-			>planeación estratégica</span
-		> y construcción de equipos.
-	</p>
-	<a
-		href={CV_URL}
-		target='_blank'
-		rel='noopener noreferrer'
-		class='flex w-fit items-center justify-center gap-2 rounded-md bg-(--color-accent) px-5 py-2 text-sm font-medium text-(--color-bg) transition-colors hover:bg-(--color-accent)/80 focus-visible:ring-2 focus-visible:ring-(--color-accent) focus-visible:ring-offset-2 focus-visible:ring-offset-(--color-bg) focus-visible:outline-none md:text-base'>
-		Curriculum
-		<FileUser size={15}/>
-	</a>
+  class="mx-auto my-2 flex w-full flex-col items-center justify-center gap-3 text-(--color-text) md:my-4"
+  id="aboutme"
+>
+  <h1 class="mb-2 self-start text-3xl md:mb-4 md:text-4xl">Sobre Mi</h1>
+  <img
+    class="aspect-square w-4/12 rounded-full object-cover"
+    src="/Angel-AboutMe.webp"
+    alt="Foto de perfil"
+  />
+  <p class="mb-4 self-start text-sm md:text-base">
+    ¡Hola, soy <span class="font-semibold text-(--color-accent)">Ángel</span>!
+    <span class="font-medium text-(--color-highlight)">Desarrollador Web</span> y
+    egresado de
+    <span class="font-medium text-(--color-highlight)"
+      >Ingeniería en Software y Redes</span
+    >. Disfruto transformar la <span class="font-semibold text-(--color-accent)"
+      >lógica compleja</span
+    > en
+    <span class="font-semibold text-(--color-accent)"
+      >soluciones eficientes y escalables</span
+    >.
+  </p>
+  <p class="mb-4 self-start text-sm md:text-base">
+    Me considero un desarrollador en
+    <span class="font-medium text-(--color-highlight)">constante evolución</span
+    >; actualmente dedico tiempo a optimizar mi
+    <span class="font-semibold text-(--color-accent)">entorno de trabajo</span> y
+    adoptar
+    <span class="font-medium text-(--color-highlight)"
+      >herramientas modernas</span
+    > que agilicen mi
+    <span class="font-semibold text-(--color-accent)">flujo de desarrollo</span> diario.
+    Mi meta a mediano plazo es consolidarme como
+    <span class="font-medium text-(--color-highlight)">Fullstack</span>.
+  </p>
+  <p class="mb-4 self-start text-sm md:text-base">
+    Fuera de la programación, mantengo activo mi lado
+    <span class="font-semibold text-(--color-accent)">analítico</span> con
+    <span class="font-medium text-(--color-highlight)">videojuegos</span> que requieren
+    <span class="font-medium text-(--color-highlight)"
+      >planeación estratégica</span
+    > y construcción de equipos.
+  </p>
+  <a
+    href={CV_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="flex w-fit items-center justify-center gap-2 rounded-md bg-(--color-accent) px-5 py-2 text-sm font-medium text-(--color-bg) transition-colors hover:bg-(--color-accent)/80 focus-visible:ring-2 focus-visible:ring-(--color-accent) focus-visible:ring-offset-2 focus-visible:ring-offset-(--color-bg) focus-visible:outline-none md:text-base"
+  >
+    Curriculum
+    <FileUser size={15} />
+  </a>
 </section>
