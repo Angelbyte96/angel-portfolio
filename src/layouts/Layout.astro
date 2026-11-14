@@ -17,6 +17,12 @@ const {
   mainClass = 'mx-auto w-11/12 md:w-9/12',
   hideFooter = false,
 } = Astro.props
+
+// Every page canonicalizes to itself, with the trailing slash the host serves.
+const pathname = Astro.url.pathname.endsWith('/')
+  ? Astro.url.pathname
+  : `${Astro.url.pathname}/`
+const canonicalURL = new URL(pathname, Astro.site)
 ---
 
 <!doctype html>
@@ -29,7 +35,7 @@ const {
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/avatar.webp" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="canonical" href="https://angelbyte.dev/" />
+    <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
     <ClientRouter />
     <script is:inline>
